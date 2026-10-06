@@ -17,6 +17,8 @@ Static site for **learn.curiosta.com** — timeless fundamentals (scientific tem
 | `lessons/how-to-know/index.html` | Theme 01 lessons index |
 | `lessons/how-to-know/01-seeing-vs-believing.html` | Lesson 1 · Seeing vs believing (CDS + Socratic) |
 | `lessons/how-to-know/02-falsifiability.html` | Lesson 2 · Falsifiability (CDS + Socratic) |
+| `lessons/first-principles/index.html` | Theme 02 lessons index |
+| `lessons/first-principles/01-strip-to-what-is-true.html` | Lesson 1 · Strip it to what is true (CDS + Socratic) |
 | `style.css` | Shared Curiosta tokens and chrome (+ lesson-page components) |
 | `CNAME` | `learn.curiosta.com` |
 
