@@ -19,6 +19,9 @@ Static site for **learn.curiosta.com** — timeless fundamentals (scientific tem
 | `lessons/how-to-know/02-falsifiability.html` | Lesson 2 · Falsifiability (CDS + Socratic) |
 | `lessons/first-principles/index.html` | Theme 02 lessons index |
 | `lessons/first-principles/01-strip-to-what-is-true.html` | Lesson 1 · Strip it to what is true (CDS + Socratic) |
+| `lessons/first-principles/02-frame-then-invent.html` | Lesson 2 · Frame the problem, then invent (CDS + Socratic; problem framing + TRIZ ideation) |
+| `resources.html` | Skills & resources index — tools and refreshers that support the lessons |
+| `resources/triz-refresher.html` | TRIZ refresher (supports Theme 02 · First principles) |
 | `style.css` | Shared Curiosta tokens and chrome (+ lesson-page components) |
 | `CNAME` | `learn.curiosta.com` |
 

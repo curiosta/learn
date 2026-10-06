@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRIZ refresher · Skills &amp; resources · learn.curiosta.com</title>
+<meta name="description" content="A short, Socratic TRIZ refresher: Altshuller’s theory of inventive problem solving — contradictions, the contradiction matrix and 40 inventive principles, the Ideal Final Result, resources, separation principles, and trends of evolution. Supports Theme 02, First principles: TRIZ closes the gap above the physical floor; it cannot beat the floor.">
+<link rel="canonical" href="https://learn.curiosta.com/resources/triz-refresher.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306243a'/%3E%3Cpath d='M8 22h16M10 22V12l6 4 6-4v10' stroke='%2311b5a4' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='9' r='2.2' fill='%23ff6b4a'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html" aria-label="learn home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#06243a"/><path d="M8 22h16M10 22V12l6 4 6-4v10" stroke="#11b5a4" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="9" r="2.2" fill="#ff6b4a"/></svg>
+      <span>learn<b>.</b></span>
+    </a>
+    <nav class="sectionnav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../resources.html" aria-current="page">Skills &amp; resources</a>
+      <a href="../curriculum.html#how-we-teach">How we teach</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap narrow">
+      <p class="crumbs"><a href="../resources.html">Skills &amp; resources</a> / TRIZ refresher</p>
+      <span class="eyebrow">Refresher · supports Theme 02 · First principles</span>
+      <h1>TRIZ refresher</h1>
+      <p class="lede">A working refresher on the theory of inventive problem solving: how to name a contradiction, where to look for a way through it, and why no inventive trick moves a floor set by physics.</p>
+      <ul class="lesson-meta" aria-label="Refresher details">
+        <li>Refresher</li>
+        <li>Socratic</li>
+        <li>~20 min with a notebook</li>
+      </ul>
+    </div>
+  </section>
+
+  <article class="lesson">
+    <div class="narrow">
+
+      <nav class="toc" aria-label="In this refresher">
+        <strong>In this refresher</strong>
+        <ol>
+          <li><a href="#how-to-use">How to use this page</a></li>
+          <li><a href="#what">What TRIZ is</a></li>
+          <li><a href="#contradictions">Two kinds of contradiction</a></li>
+          <li><a href="#matrix">The matrix and the 40 principles</a></li>
+          <li><a href="#ideality">Ideality and resources</a></li>
+          <li><a href="#separation">Separation principles</a></li>
+          <li><a href="#trends">Trends of evolution</a></li>
+          <li><a href="#example">Worked example · The 30-second cup</a></li>
+          <li><a href="#floor">TRIZ and the floor</a></li>
+          <li><a href="#limits">Honest limits</a></li>
+          <li><a href="#review">Review questions</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ol>
+      </nav>
+
+      <section id="how-to-use">
+        <span class="stage">Before you begin</span>
+        <h2>How to use this page</h2>
+        <p>This is a refresher, not a full lesson. It builds on First principles <a href="../lessons/first-principles/01-strip-to-what-is-true.html">Lesson 1 · Strip it to what is true</a>, and on its central idea: every job has a <strong>floor</strong> set by physics, and the <strong>gap</strong> above it is set by process, scale, and habit. TRIZ is a toolkit for working that gap.</p>
+        <p>As in the lessons, write an answer at each <strong>Pause and answer</strong> box before you open the fold.</p>
+      </section>
+
+      <section id="what">
+        <span class="stage">1 · Foundation</span>
+        <h2>What TRIZ is</h2>
+        <p>TRIZ is the Russian acronym for <em>Teoriya Resheniya Izobretatelskikh Zadach</em>: the theory of inventive problem solving. Genrich Altshuller (1926–1998) began the work in 1946, while employed in a patent office of the Soviet Navy. His question: inventions are written down in patents, so do the strong ones share patterns?</p>
+        <p>His answer, built up over decades with colleagues, was yes. Strong inventions tended not to <em>compromise</em> — a bit less roomy, a bit less heavy — but to remove the conflict that weaker designs simply traded off. And the same few dozen ways of doing so kept turning up in unrelated fields.</p>
+        <p>In 1948 Altshuller and his colleague Rafael Shapiro wrote to Stalin criticising Soviet inventive practice; in 1950 both were arrested and sentenced to 25 years in the labour camps. Altshuller was freed in 1954, after Stalin’s death, and spent the rest of his life on TRIZ. Its best-known tools — the 40 inventive principles and the contradiction matrix — took their classic form around 1971, alongside a step-by-step procedure for working a problem, called ARIZ.</p>
+      </section>
+
+      <section id="contradictions">
+        <span class="stage">2 · Questions that arise</span>
+        <h2>Two kinds of contradiction</h2>
+        <p>A <strong>technical contradiction</strong> is a trade between two parameters: improve one by the usual means and another gets worse. Make a car body stronger with thicker steel, and it gets heavier. Make a kettle element more powerful, and it draws more current than the socket allows.</p>
+        <p>A <strong>physical contradiction</strong> is sharper: one parameter must take two opposite values. An aircraft’s landing gear must be <em>there</em> (to land) and <em>not there</em> (to cut drag in flight). A kettle element must be high-power (to be fast) and low-power (to suit the socket). A physical contradiction usually sits underneath a technical one, and naming it tends to point straight at a way out.</p>
+        <div class="deduce">
+          <span class="label">Deduction</span>
+          <p>“More X costs us Y” is a technical contradiction. “This one thing must be both A and not-A” is the physical one — harder to say, easier to solve.</p>
+        </div>
+      </section>
+
+      <section id="matrix">
+        <span class="stage">3 · Observations</span>
+        <h2>The contradiction matrix and the 40 principles</h2>
+        <p>Altshuller generalised technical contradictions into <strong>39 standard engineering parameters</strong> — weight of a moving object, length, speed, force, strength, temperature, power, loss of energy, loss of time, reliability, ease of manufacture, productivity, and so on. The <strong>contradiction matrix</strong> is a 39&nbsp;×&nbsp;39 table: rows for the parameter you want to improve, columns for the one that gets worse. Each cell lists the numbers of a few (up to four) principles that inventors had most often used to resolve that kind of conflict.</p>
+        <p>The matrix gives no answer — only a short list of directions worth trying first. The 40 inventive principles, in their standard order:</p>
+        <ol class="principles">
+            <li>Segmentation</li>
+            <li>Taking out (extraction)</li>
+            <li>Local quality</li>
+            <li>Asymmetry</li>
+            <li>Merging (consolidation)</li>
+            <li>Universality</li>
+            <li>Nested doll (nesting)</li>
+            <li>Anti-weight (counterweight)</li>
+            <li>Preliminary anti-action</li>
+            <li>Preliminary action</li>
+            <li>Beforehand cushioning</li>
+            <li>Equipotentiality</li>
+            <li>The other way round (inversion)</li>
+            <li>Spheroidality (curvature)</li>
+            <li>Dynamics (dynamicity)</li>
+            <li>Partial or excessive actions</li>
+            <li>Another dimension</li>
+            <li>Mechanical vibration</li>
+            <li>Periodic action</li>
+            <li>Continuity of useful action</li>
+            <li>Skipping (rushing through)</li>
+            <li>Blessing in disguise (turn harm into benefit)</li>
+            <li>Feedback</li>
+            <li>Intermediary (mediator)</li>
+            <li>Self-service</li>
+            <li>Copying</li>
+            <li>Cheap short-living objects</li>
+            <li>Mechanics substitution</li>
+            <li>Pneumatics and hydraulics</li>
+            <li>Flexible shells and thin films</li>
+            <li>Porous materials</li>
+            <li>Colour changes</li>
+            <li>Homogeneity</li>
+            <li>Discarding and recovering</li>
+            <li>Parameter changes</li>
+            <li>Phase transitions</li>
+            <li>Thermal expansion</li>
+            <li>Strong oxidants (accelerated oxidation)</li>
+            <li>Inert atmosphere</li>
+            <li>Composite materials</li>
+        </ol>
+        <p>Each name is shorthand for a cluster of sub-principles; <em>Segmentation</em>, for example, covers dividing an object into independent parts, making it easy to take apart, and dividing it more finely.</p>
+        <div class="pause">
+          <span class="label">Pause and answer</span>
+          <ol>
+            <li>Choose three principles from the list and find one example of each in your home or street.</li>
+          </ol>
+        </div>
+        <details class="reveal">
+          <summary>After you have found your examples — compare with some of ours</summary>
+          <p><strong>Nested doll:</strong> stacking measuring cups, a telescopic umbrella. <strong>The other way round:</strong> a treadmill moves the ground instead of the runner. <strong>Equipotentiality:</strong> a mechanic’s pit, which avoids lifting the car. <strong>Phase transitions:</strong> an ice pack that soaks up heat as it melts. If an example fits two principles, that is normal: the labels overlap; the direction of thought matters, not the number.</p>
+        </details>
+      </section>
+
+      <section id="ideality">
+        <span class="stage">4 · Refine the picture</span>
+        <h2>Ideality, the Ideal Final Result, and resources</h2>
+        <p>TRIZ judges a design by its <strong>ideality</strong>: roughly, the useful functions it delivers divided by everything it costs — material, energy, space, money, and harm. Ideality rises when benefits go up, costs come down, or both. At the limit sits the <strong>Ideal Final Result</strong> (IFR): the function is delivered, and the system that delivers it has vanished. The job, in effect, does itself.</p>
+        <p>You never reach the IFR; it is a direction to face. It pulls you away from polishing the device you have and toward a better question: <em>what is already here that could do the job?</em></p>
+        <p>That question has a TRIZ name: <strong>resources</strong>. Before adding anything, list what is already in or around the system and free to use — <strong>substances</strong> (the material itself, air, water, waste), <strong>fields and energy</strong> (gravity, heat in the surroundings, sunlight, pressure), <strong>space</strong> (empty volume, the other side of a surface), <strong>time</strong> (idle periods, before and after the main operation), and <strong>information</strong>. Many strong solutions add nothing: something already present does the work.</p>
+      </section>
+
+      <section id="separation">
+        <span class="stage">5 · A model for physical contradictions</span>
+        <h2>Separation principles</h2>
+        <p>If one thing must be both A and not-A, ask: <em>where, when, under what conditions, and at what scale</em> does it need to be each?</p>
+        <table class="model-table">
+          <thead>
+            <tr><th scope="col">Separate in…</th><th scope="col">The idea</th><th scope="col">A classic example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Time</strong></td><td>A at one moment, not-A at another.</td><td>Retractable landing gear: down to land, up in flight.</td></tr>
+            <tr><td><strong>Space</strong></td><td>A in one place, not-A in another.</td><td>Bifocal lenses: one zone for far, another for near.</td></tr>
+            <tr><td><strong>Condition</strong></td><td>A under some conditions, not-A under others.</td><td>A sieve: open to water, closed to sand.</td></tr>
+            <tr><td><strong>Scale</strong> (parts vs whole)</td><td>A for each part, not-A for the whole.</td><td>A bicycle chain: every link rigid, the chain flexible.</td></tr>
+          </tbody>
+        </table>
+        <div class="pause">
+          <span class="label">Pause and answer</span>
+          <ol>
+            <li>An umbrella must be large (to keep you dry) and small (to carry). State the physical contradiction, then try each of the four separations. Which ones lead somewhere?</li>
+          </ol>
+        </div>
+        <details class="reveal">
+          <summary>After you have tried all four — compare your reasoning</summary>
+          <p>Separation in <strong>time</strong> gives the umbrella we already have: large when open, small when folded — helped by <em>Segmentation</em> (hinged ribs) and <em>Nested doll</em> (a telescopic shaft). Separation in <strong>space</strong> asks whether the cover must travel with you at all — an awning, a covered walkway. Not every separation yields a product; each yields a question you would not otherwise have asked.</p>
+        </details>
+      </section>
+
+      <section id="trends">
+        <span class="stage">6 · Further questions</span>
+        <h2>Trends of evolution, briefly</h2>
+        <p>Altshuller also argued that technical systems evolve in recognisable directions (his “laws of technical system evolution”): systems move toward higher ideality; their parts develop unevenly, and the part that lags behind creates the next contradiction; they become more dynamic and controllable (rigid, then hinged, then flexible, then a field); they shift from the macro level to the micro level; and single systems merge into double and multiple systems, and finally into a larger supersystem. Followers often draw a technology’s life as an S-curve: slow start, rapid growth, then a plateau as it nears its limits. Use them to ask “what comes next?” — they are observed tendencies, not laws of physics.</p>
+      </section>
+
+      <section id="example">
+        <span class="stage">7 · Worked example</span>
+        <h2>The 30-second cup, revisited</h2>
+        <div class="obs">
+          <p>Lesson 1’s advert promised a full litre boiled in 30 seconds from a home socket. We found the floor: warming 1&nbsp;kg of water from 25&nbsp;°C to 100&nbsp;°C needs about <strong>314&nbsp;kJ</strong>; in 30 seconds that is about <strong>10.5&nbsp;kW</strong>; a heavy-duty Indian socket gives at most about <strong>3.7&nbsp;kW</strong>. The advert failed on arithmetic. Now you want fast hot water anyway.</p>
+        </div>
+        <div class="pause">
+          <span class="label">Pause and answer</span>
+          <ol>
+            <li>State the technical contradiction using two of the 39 parameters. Then state the physical contradiction underneath it.</li>
+            <li>Which separation fits? Which principles from the list point the same way?</li>
+            <li>Write an Ideal Final Result for hot water, and list the resources around a kitchen.</li>
+            <li>Which of your ideas, if any, puts less than 314&nbsp;kJ of heat into a litre of water?</li>
+          </ol>
+        </div>
+        <details class="reveal">
+          <summary>After you have written your answers — compare your reasoning</summary>
+          <p><strong>Contradiction.</strong> Improve <em>loss of time</em> (boil faster) and <em>power</em> gets worse: more than the socket can supply. Underneath: the power drawn must be high (to be fast) and low (to suit the socket).</p>
+          <p><strong>Separation in time.</strong> Draw low power for a long time; deliver high power briefly. That is principle 10, <em>Preliminary action</em>: store the energy beforehand — in a battery charged slowly, or as hot water kept ready in an insulated tank, which is how instant hot-water dispensers work. Lesson 1 reached the same place: storage can beat a power limit.</p>
+          <p><strong>Change the job.</strong> Heat only what you need (close to principle 2, <em>Taking out</em>). A 250&nbsp;ml cup needs about 78&nbsp;kJ, so its floor at 3.7&nbsp;kW is about 21 seconds. A 30-second <em>cup</em> is within physics; a 30-second <em>litre</em> from a socket is not.</p>
+          <p><strong>IFR and resources.</strong> “Hot water appears in my cup when I want it, with no electricity spent.” Resources: heat in the room air (a heat pump moves it rather than making it), sunlight (a solar water heater).</p>
+          <p><strong>What no idea did.</strong> Every route still puts at least 314&nbsp;kJ of heat into each litre warmed from 25&nbsp;°C to 100&nbsp;°C. The principles changed <em>when</em> the energy is drawn, <em>how much</em> water is heated, and <em>where</em> the heat comes from. None reduced the heat the water needs.</p>
+        </details>
+      </section>
+
+      <section id="floor">
+        <span class="stage">8 · The model</span>
+        <h2>TRIZ and the floor</h2>
+        <div class="deduce">
+          <span class="label">Deduction</span>
+          <p><strong>First principles find the floor; TRIZ works the gap above it.</strong> Where reality sits far above the floor, as aluminium did in the 1880s, the limit is ours, and TRIZ offers an organised way to look for the better method. Where reality sits near the floor, as a good kettle does, TRIZ can still change the job — less water, a different time, a different heat source — but it cannot make the same job cost less than physics charges.</p>
+          <p>When a TRIZ idea seems to beat a floor, ask: did it quietly change the job, or reveal a resource the floor ignored (as the heat pump did)? If neither, suspect the idea, not the physics.</p>
+        </div>
+      </section>
+
+      <section id="limits">
+        <span class="stage">9 · Models, not theorems</span>
+        <h2>Honest limits</h2>
+        <div class="occam">
+          <span class="label">What TRIZ is not</span>
+          <ul>
+            <li><strong>The classic matrix is dated.</strong> It was distilled from mid-20th-century patents, heavy on mechanical engineering, and its 39 parameters fit electronics, software, biology, and services awkwardly. Later work has revised it — for example Mann and colleagues’ <em>Matrix 2003</em>, with 48 parameters.</li>
+            <li><strong>It is heuristic, not law.</strong> The principles suggest where to look; they do not guarantee a solution, and one problem often fits several labels. The “laws” of evolution are generalisations from examples and can mislead for a particular technology.</li>
+            <li><strong>The evidence is mostly practical.</strong> Much of the case for TRIZ rests on case studies and practitioner reports rather than controlled comparisons. Practitioners also report a steep learning curve and a large, complex toolkit (Ilevbare, Probert and Phaal, 2013).</li>
+            <li><strong>It does not judge worth.</strong> Whether an option is safe, fair, or worth building remains your judgement.</li>
+          </ul>
+          <p>Treat TRIZ the way the course treats every model: <strong>useful until an observation says otherwise</strong>, and always checked against the floor.</p>
+        </div>
+      </section>
+
+      <section id="review">
+        <span class="stage">10 · Study by reasoning</span>
+        <h2>Review questions</h2>
+        <p>Answer by <strong>explaining</strong>, in full sentences, as if to someone who has never heard of TRIZ.</p>
+        <ol>
+          <li>Explain the difference between a technical and a physical contradiction, using one example of your own.</li>
+          <li>Name the four separations and give an everyday example of each that is not on this page.</li>
+          <li>Using the 30-second cup, explain why TRIZ can close the gap above a floor but cannot beat the floor.</li>
+        </ol>
+
+        <div class="lesson-pager">
+          <a class="btn btn-quiet" href="../resources.html">← All skills &amp; resources</a>
+          <a class="btn btn-quiet" href="../lessons/first-principles/01-strip-to-what-is-true.html">First principles · Lesson 1</a>
+          <a class="btn btn-quiet" href="../lessons/first-principles/index.html">Theme 02 lessons</a>
+        </div>
+
+        <div class="attrib" id="sources">
+          <p><strong>Sources.</strong> Facts about TRIZ and its history are drawn from Altshuller’s own books and standard references; kettle figures are derived in Lesson 1, with sources listed there.</p>
+          <ul>
+            <li>G.&nbsp;S. Altshuller, <em>Creativity as an Exact Science: The Theory of the Solution of Inventive Problems</em>, trans. A. Williams (Gordon and Breach, 1984).</li>
+            <li>G. Altshuller, <em>And Suddenly the Inventor Appeared: TRIZ, the Theory of Inventive Problem Solving</em>, trans. L. Shulyak (Technical Innovation Center, 1996).</li>
+            <li>G. Altshuller, <em>40 Principles: TRIZ Keys to Technical Innovation</em>, trans. L. Shulyak and S. Rodman (Technical Innovation Center, 1997).</li>
+            <li>G. Altshuller, <em>The Innovation Algorithm: TRIZ, Systematic Innovation and Technical Creativity</em>, trans. L. Shulyak and S. Rodman (Technical Innovation Center, 1999).</li>
+            <li>S.&nbsp;D. Savransky, <em>Engineering of Creativity: Introduction to TRIZ Methodology of Inventive Problem Solving</em> (CRC Press, 2000).</li>
+            <li>D. Mann, S. Dewulf, B. Zlotin and A. Zusman, <em>Matrix 2003: Updating the TRIZ Contradiction Matrix</em> (CREAX Press, 2003).</li>
+            <li>I.&nbsp;M. Ilevbare, D. Probert and R. Phaal, “A review of TRIZ, and its benefits and challenges in practice”, <em>Technovation</em> 33 (2–3), 2013, pp.&nbsp;30–37.</li>
+            <li>Biographical dates (1946 start; 1948 letter; 1950 arrest; 1954 release; ARIZ-71 with the 40 principles and matrix): Official G.&nbsp;S. Altshuller Foundation, altshuller.ru, chronology.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      Part of the <a href="https://www.curiosta.com/">Curiosta</a> family
+      <p class="siblings">
+        Siblings:
+        <a href="https://kinetic.curiosta.com/">kinetic.curiosta.com</a> ·
+        <a href="https://equity.curiosta.com/">equity.curiosta.com</a>
+      </p>
+      <span class="draft">learn.curiosta.com · a Curiosta brand</span>
+    </div>
+    <nav aria-label="Footer">
+      <a href="../index.html">Home</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../resources.html">Skills &amp; resources</a>
+      <a href="../curriculum.html#how-we-teach">How we teach</a>
+      <a href="https://www.curiosta.com/">Curiosta</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

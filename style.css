@@ -742,3 +742,78 @@ details.reveal > :last-child {
     padding: 0.65rem 0.7rem;
   }
 }
+
+/* ---------- Skills & resources (site layer) ---------- */
+.resource-list {
+  display: grid;
+  gap: 16px;
+  max-width: 860px;
+}
+
+.card.resource .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+}
+
+.tag {
+  display: inline-block;
+  font: 600 0.72rem / 1.2 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sea-700);
+  background: var(--teal-soft);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.card.resource .more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font: 600 0.92rem var(--sans);
+  color: var(--sea-500);
+}
+
+a.card.resource:hover .more {
+  color: var(--coral);
+}
+
+.go-further {
+  margin: 1.6rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
+.go-further strong {
+  font: 700 0.72rem / 1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sea-500);
+  margin-right: 0.4rem;
+}
+
+.principles {
+  columns: 3;
+  column-gap: 1.6rem;
+  margin: 0.4rem 0 0;
+  padding-left: 2.1rem;
+  font-size: 0.93rem;
+}
+
+.principles li {
+  break-inside: avoid;
+  margin: 0 0 0.2rem;
+}
+
+@media (max-width: 760px) {
+  .principles {
+    columns: 2;
+  }
+}
+
+@media (max-width: 420px) {
+  .principles {
+    columns: 1;
+  }
+}
