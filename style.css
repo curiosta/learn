@@ -1069,6 +1069,8 @@ a.card.resource:hover .more {
   gap: 16px;
   align-items: start;
 }
+/* An open card takes the full row; collapsed months stay compact tiles. */
+.otd-grid > .mcard[open] { grid-column: 1 / -1; }
 .mcard {
   background: var(--card);
   border: 1px solid var(--line);
@@ -1149,10 +1151,16 @@ a.card.resource:hover .more {
 .otd-meta .src { color: var(--sea-500); word-break: break-word; }
 .today-flag { color: #fff; background: var(--coral); }
 .otd-ev.is-today { background: var(--coral-soft); }
+.otd-ev[hidden], .otd-actions[hidden] { display: none; }
 .otd-empty { margin: 0; padding: 0 1.2rem 1.1rem; font-size: 0.9rem; color: var(--muted); }
 .otd-method { max-width: 780px; }
 .otd-method p, .otd-method li { color: var(--ink-2); }
 .otd-method ul { padding-left: 1.2rem; }
+@media (min-width: 1001px) {
+  /* Full-width open card on desktop: two newspaper columns, read down then across. */
+  .mcard[open] .otd-list { display: block; column-count: 2; column-gap: 2rem; column-rule: 1px solid var(--line); padding: 0.4rem 1.2rem 0.9rem; }
+  .mcard[open] .otd-ev { break-inside: avoid; }
+}
 @media (max-width: 1000px) { .otd-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
   .otd-grid { grid-template-columns: minmax(0, 1fr); }
