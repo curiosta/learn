@@ -22,6 +22,9 @@ Static site for **learn.curiosta.com** — timeless fundamentals (scientific tem
 | `lessons/first-principles/02-frame-then-invent.html` | Lesson 2 · Frame the problem, then invent (CDS + Socratic; problem framing + TRIZ ideation) |
 | `resources.html` | Skills & resources index — tools and refreshers that support the lessons |
 | `resources/triz-refresher.html` | TRIZ refresher (supports Theme 02 · First principles) |
+| `control-map.html` | Control map — five verbs × five objects of practical power over mass and energy, kitchen → industry → ISRO/NASA/CERN/DRDO → record on Earth; Kardashev scale |
+| `on-this-day.html` | On this day: mastering mass and energy — 12 month memory cards of dated feats (1644→2025), built from `data/on-this-day.json` |
+| `data/on-this-day.json` | Dataset for On this day (events, reserve, dropped) |
 | `style.css` | Shared Curiosta tokens and chrome (+ lesson-page components) |
 | `CNAME` | `learn.curiosta.com` |
 
