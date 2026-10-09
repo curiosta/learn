@@ -271,24 +271,44 @@
 </footer>
 <script>
 (function () {
-  var slider = document.getElementById('pos');
-  var posVal = document.getElementById('posVal);
-  var you = document.getElementById('you');
-  var youSub = document.getElementById('youSub);
-  var yourArrow = document.getElementById('yourArrow');
-  var yourLabel = document.getElementById('yourLabel);
-  var yourSubLabel = document.getElementById('yourSubLabel');
-  var hedgeArrow = document.getElementById('hedgeArrow');
-  var hedgeLabel = document.getElementById('hedgeLabel');
-  var hedgeSub = document.getElementById('hedgeSub);
-  var costDot = document.getElementById('costDot');
-  var costLabel = document.getElementById('costLabel');
-  var costSub = document.getElementById('costSub');
-  var insightTitle = document.getElementById('insightTitle);
-  var insight1 = document.getElementById('insight1);
-  var insight2 = document.getElementById('insight2);
-  var insight3 = document.getElementById('insight3');
-  var band = document.getElementById('band);
+  'use strict';
+  function $(id) { return document.getElementById(id); }
+
+  var slider = $('pos');
+  var posVal = $('posVal');
+  var you = $('you');
+  var youSub = $('youSub');
+  var yourArrow = $('yourArrow');
+  var yourLabel = $('yourLabel');
+  var yourSubLabel = $('yourSubLabel');
+  var hedgeArrow = $('hedgeArrow');
+  var hedgeLabel = $('hedgeLabel');
+  var hedgeSub = $('hedgeSub');
+  var costDot = $('costDot');
+  var costLabel = $('costLabel');
+  var costSub = $('costSub');
+  var insightTitle = $('insightTitle');
+  var insight1 = $('insight1');
+  var insight2 = $('insight2');
+  var insight3 = $('insight3');
+  var band = $('band');
+  var costPath = $('costPath');
+
+  var required = {pos:slider,posVal:posVal,you:you,youSub:youSub,yourArrow:yourArrow,
+    yourLabel:yourLabel,yourSubLabel:yourSubLabel,hedgeArrow:hedgeArrow,hedgeLabel:hedgeLabel,
+    hedgeSub:hedgeSub,costDot:costDot,costLabel:costLabel,costSub:costSub,
+    insightTitle:insightTitle,insight1:insight1,insight2:insight2,insight3:insight3,
+    band:band,costPath:costPath);
+  var missing = [];
+  for (var k in required) { if (!required[k]) missing.push(k); }
+  if (missing.length) {
+    var err = document.createElement('div);
+    err.style.cssText = 'background:#ffecec;border:1px solid #ff6b4a;color:#8a1f11;padding:1rem;border-radius:8px;margin:1rem 0;font-family:monospace;font-size:.85rem';
+    err.textContent = 'Diagram script could not find: ' + missing.join(', ') + '. Try a hard refresh (Ctrl+Shift+R).';
+    var main = document.querySelector('main);
+    if (main) main.insertBefore(err, main.firstChild);
+    return;
+  }
 
   var ages = ['18','20','22','24','26','28','30','32','34','36','38','40','42','44','46','48','50','52','54','56','58'];
   var labels = ['student','early career','building','building','building','building','mid-career','mid-career','mid-career','established','established','established','senior','senior','senior','late career','late career','late career','late career','late career','late career'];
@@ -296,17 +316,15 @@
   function lerp(a, b, t) { return a + (b - a) * t; }
 
   function update() {
-    var t = slider.value / 20; // 0 at now, 1 at +20y
-    var x = lerp(80, 800, t); // pixel position on timeline
+    var t = Number(slider.value) / 20;
+    var x = lerp(80, 800, t);
     var age = ages[slider.value];
     var label = labels[slider.value];
 
-    // Your position
     you.setAttribute('cx', x);
     youSub.textContent = label + ' · age ' + age;
     youSub.setAttribute('x', x);
 
-    // Your arrow: ~5 years ahead, scaled by position
     var targetX = lerp(x + 40, 980, Math.min(t + 0.25, 1));
     var targetY = lerp(175, 130, t);
     yourArrow.setAttribute('x1', x + 15);
@@ -319,7 +337,6 @@
     yourSubLabel.setAttribute('x', (x + targetX) / 2);
     yourSubLabel.setAttribute('y', targetY + 4);
 
-    // Hedge arrow: splits from yours, ~8 years ahead
     var hx = lerp(x + 60, 900, Math.min(t + 0.4, 1));
     var hy = lerp(145, 120, t);
     hedgeArrow.setAttribute('x1', x + 30);
@@ -331,39 +348,76 @@
     hedgeSub.setAttribute('x', (x + hx) / 2 + 20);
     hedgeSub.setAttribute('y', hy + 4);
 
-    // Cost curve: steepens as you move right (less runway)
     var c1 = lerp(415, 380, t);
     var c2 = lerp(390, 300, t);
     var c3 = lerp(330, 220, t);
-    var costPath = 'M80,430 Q200,' + c1 + ' 320,' + (c1 - 10) + ' Q440,' + c2 + ' 560,' + c3 + ' Q680,' + (c3 - 80) + ' 800,' + (c3 - 160) + ' Q920,' + (c3 - 220) + ' 1040,' + (c3 - 250);
-    document.getElementById('costPath').setAttribute('d', costPath);
-    // Cost dot sits at your position's cost
-    var cy = lerp(430, 170, t * t); // quadratic — cost rises faster than linear
+    costPath.setAttribute('d',
+      'M80,430 Q200,' + c1 + ' 320,' + (c1 - 10) +
+      ' Q440,' + c2 + ' 560,' + c3 +
+      ' Q680,' + (c3 - 80) + ' 800,' + (c3 - 160) +
+      ' Q920,' + (c3 - 220) + ' 1040,' + (c3 - 250));
+    var cy = lerp(430, 170, t * t);
     costDot.setAttribute('cx', x);
     costDot.setAttribute('cy', cy);
     costLabel.setAttribute('x', x + 20);
     costLabel.setAttribute('y', cy - 5);
     costSub.setAttribute('x', x + 20);
     costSub.setAttribute('y', cy + 11);
-    costSub.textContent = t < 0.3 ? 'cheap early · runway intact' : (t < 0.6 ? 'steepening · year 3+ territory' : 'steep · starting over costs more than switching');
+    costSub.textContent = t < 0.3 ? 'cheap early · runway intact' :
+                          (t < 0.6 ? 'steepening · year 3+ territory' :
+                           'steep · starting over costs more than switching');
 
-    // Predictability band: shrinks as you move right
     var bandTop = lerp(130, 200, t);
-    band.setAttribute('d', 'M80,250 L80,' + bandTop + ' Q' + lerp(260, 400, t) + ',' + lerp(150, 210, t) + ' ' + lerp(440, 560, t) + ',' + lerp(190, 235, t) + ' Q' + lerp(620, 700, t) + ',' + lerp(230, 245, t) + ' 800,250 L800,250 L' + lerp(440, 560, t) + ',250 L' + lerp(260, 400, t) + ',250 L80,250 Z);
+    band.setAttribute('d',
+      'M80,250 L80,' + bandTop +
+      ' Q' + lerp(260, 400, t) + ',' + lerp(150, 210, t) +
+      ' ' + lerp(440, 560, t) + ',' + lerp(190, 235, t) +
+      ' Q' + lerp(620, 700, t) + ',' + lerp(230, 245, t) +
+      ' 800,250 L800,250 L' + lerp(440, 560, t) + ',250 L' + lerp(260, 400, t) + ',250 L80,250 Z');
 
-    // Insight box
     posVal.textContent = 'now +' + slider.value + 'y · age ' + age;
     insightTitle.textContent = t < 0.25 ? 'Aim near enough to be right, far enough to matter.' :
                                t < 0.5 ? 'Your window is narrowing — hedge harder.' :
                                t < 0.75 ? 'The cost curve is steep here. Choose before you commit.' :
                                'Late start: meta-learning is the only cheap skill left.';
-    insight1.textContent = 'Position +' + slider.value + ' years. Predictable band: ' + Math.round((1 - t) * 100) + '% of what it was at now. Your arrow: ' + Math.round(5 + t * 5) + ' years out.';
-    insight2.textContent = t < 0.4 ? 'The compounding skills are what pull this predictable band forward with you.' :
-                            'At this position, distribution and relationships matter most — they cannot be rushed.';
-    insight3.textContent = 'The baby, born at your position, still has ' + Math.round(20 - t * 20) + ' years of runway. You have ' + Math.round(5 * (1 - t * 0.6)) + '.';
+    insight1.textContent = 'Position +' + slider.value + ' years. Predictable band: ' +
+                           Math.round((1 - t) * 100) + '% of what it was at now. Your arrow: ' +
+                           Math.round(5 + t * 5) + ' years out.';
+    insight2.textContent = t < 0.4 ?
+      'The compounding skills are what pull this predictable band forward with you.' :
+      'At this position, distribution and relationships matter most — they cannot be rushed.';
+    insight3.textContent = 'The baby, born at your position, still has ' +
+                           Math.round(20 - t * 20) + ' years of runway. You have ' +
+                           Math.round(5 * (1 - t * 0.6)) + '.';
   }
 
   slider.addEventListener('input', update);
+  slider.addEventListener('change', update);
+
+  var dragging = false;
+  you.style.cursor = 'grab';
+  you.addEventListener('pointerdown', function (e) {
+    dragging = true;
+    you.setPointerCapture(e.pointerId);
+    you.style.cursor = 'grabbing';
+  });
+  you.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var svg = you.ownerSVGElement;
+    var pt = svg.createSVGPoint();
+    pt.x = e.clientX; pt.y = e.clientY;
+    var ctm = svg.getScreenCTM().inverse();
+    var p = pt.matrixTransform(ctm);
+    var clamped = Math.max(80, Math.min(800, p.x));
+    var idx = Math.round((clamped - 80) / (720 / 20));
+    slider.value = idx;
+    update();
+  });
+  you.addEventListener('pointerup', function (e) {
+    dragging = false;
+    you.style.cursor = 'grab';
+  });
+
   update();
 })();
 </script>
