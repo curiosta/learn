@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The aiming diagram · learn.curiosta.com</title>
-<meta name="description" content="A lead-time diagram for career aiming: predictability decays with distance, your arrow compounds, the baby's arrow stretches far, and retraining cost accelerates past year three.">
+<meta name="description" content="An interactive lead-time diagram for career aiming: drag your position on the timeline and watch predictability, your arrow, the baby's arrow, the hedge, and the retraining cost curve recalculate. Plus when each compounding skill pays off across a lifespan.">
 <link rel="canonical" href="https://learn.curiosta.com/aiming-diagram.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="learn.curiosta.com">
 <meta property="og:title" content="The aiming diagram · learn.curiosta.com">
-<meta property="og:description" content="Predictability decays with distance. Your arrow compounds; the baby's stretches far. Retraining cost accelerates past year three.">
+<meta property="og:description" content="Drag your position on the timeline. Predictability, arrows, hedge, and retraining cost recalculate live. Plus when each compounding skill pays off across a lifespan.">
 <meta property="og:url" content="https://learn.curiosta.com/aiming-diagram.html">
 <meta property="og:image" content="https://learn.curiosta.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,6 +24,10 @@
 <style>
   .diagram-wrap{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:1.2rem;overflow-x:auto}
   .diagram-wrap svg{display:block;width:100%;min-width:720px;height:auto}
+  .controls{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:1rem}
+  .controls label{font-family:var(--mono);font-size:.78rem;font-weight:600;color:var(--sea-500);text-transform:uppercase;letter-spacing:.06em}
+  .controls input[type=range]{width:220px;accent-color:var(--sea-500)}
+  .controls .val{font-family:var(--mono);font-size:.85rem;color:var(--ink);min-width:4.5rem}
   .insight{margin-top:1.2rem;padding:1rem 1.2rem;border-left:3px solid var(--sea-500);background:var(--bg-2);border-radius:0 10px 10px 0}
   .insight strong{color:var(--ink)}
   .layer-list{list-style:none;padding:0;margin:0}
@@ -32,6 +36,13 @@
   .layer-list .tag{flex:0 0 9rem;font-family:var(--mono);font-size:.78rem;font-weight:600;color:var(--sea-500);text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem}
   .layer-list h3{margin:0 0 .3rem;font-size:1.05rem}
   .layer-list p{margin:0;color:var(--muted);font-size:.95rem;max-width:62ch}
+  .lifespan{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .lifespan .card{border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;background:var(--bg)}
+  .lifespan .card .age{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--sea-500);text-transform:uppercase;letter-spacing:.06em}
+  .lifespan .card h3{margin:.4rem 0 .4rem;font-size:1.05rem}
+  .lifespan .card p{margin:0;color:var(--muted);font-size:.9rem}
+  .lifespan .card .skills{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.35rem}
+  .lifespan .card .skills span{font-family:var(--mono);font-size:.7rem;font-weight:600;padding:.2rem .5rem;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink)}
   @media (max-width:640px){.layer-list li{flex-direction:column;gap:.3rem}.layer-list .tag{flex:none}}
 </style>
 </head>
@@ -60,14 +71,14 @@
     <div class="wrap narrow">
       <span class="eyebrow">Career · lead time</span>
       <h1>The aiming diagram.</h1>
-      <p class="lede">The world moves left to right. You stand somewhere on it. The farther ahead you aim, the less predictable the world gets — but your skills pull predictability forward with you.</p>
+      <p class="lede">Drag your position on the timeline and watch predictability, your arrow, the baby's arrow, the hedge, and the retraining cost curve recalculate. Below: when each compounding skill pays off across a lifespan.</p>
     </div>
   </section>
 
   <section class="block compact">
     <div class="wrap">
-      <div class="diagram-wrap" role="img" aria-label="Diagram: a horizontal timeline from now to plus twenty years. A blue band above the line shows predictability, dark near now and fading right. A green arrow from now points about five years ahead. A purple arrow from a baby born today points about fifteen years ahead. A dashed orange arrow splits from the green one as a hedge. A red cost curve rises steeply past year three.">
-        <svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg">
+      <div class="diagram-wrap" role="img" aria-label="Interactive diagram: a horizontal timeline from now to plus twenty-five years. A blue band above the line shows predictability, dark near now and fading right. A green arrow from your position points about five years ahead. A purple arrow from a baby born today points about fifteen years ahead. A dashed orange hedge splits from your arrow. A red cost curve rises steeply past year three.">
+        <svg id="diagram" viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="predBand" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0" stop-color="#11b5a4" stop-opacity="0.45"/>
@@ -85,17 +96,14 @@
             <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#ff6b4a"/></marker>
           </defs>
 
-          <!-- Title -->
           <text x="40" y="34" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="600" fill="#0b1f33">Aiming under decaying predictability</text>
-          <text x="40" y="56" font-family="Inter, sans-serif" font-size="13" fill="#5a6b7d">Time → · the world moves left to right · you stand somewhere on it</text>
+          <text x="40" y="56" font-family="Inter, sans-serif" font-size="13" fill="#5a6b7d">Time → · the world moves left to right · drag the slider to move your position</text>
 
-          <!-- Axes -->
           <line x1="80" y1="250" x2="1040" y2="250" stroke="#c9d3dc" stroke-width="2"/>
           <line x1="80" y1="80" x2="80" y2="480" stroke="#c9d3dc" stroke-width="2"/>
           <text x="80" y="70" font-family="JetBrains Mono, monospace" font-size="11" fill="#5a6b7d" text-anchor="middle">predictability</text>
           <text x="1048" y="254" font-family="JetBrains Mono, monospace" font-size="11" fill="#5a6b7d">time →</text>
 
-          <!-- Year ticks -->
           <g font-family="JetBrains Mono, monospace" font-size="11" fill="#8a97a6">
             <text x="80" y="272" text-anchor="middle">now</text>
             <text x="260" y="272" text-anchor="middle">+5y</text>
@@ -105,49 +113,47 @@
             <text x="980" y="272" text-anchor="middle">+25y</text>
           </g>
 
-          <!-- Predictability band (fades right) -->
-          <path d="M80,250 L80,130 Q260,150 440,190 Q620,230 800,250 L800,250 L440,250 L260,250 L80,250 Z" fill="url(#predBand)"/>
+          <path id="band" d="M80,250 L80,130 Q260,150 440,190 Q620,230 800,250 L800,250 L440,250 L260,250 L80,250 Z" fill="url(#predBand)"/>
           <text x="150" y="150" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0b6e63">predictable</text>
           <text x="860" y="150" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8a97a6">unpredictable</text>
 
-          <!-- YOU marker -->
-          <circle cx="80" cy="250" r="9" fill="#0b1f33"/>
+          <circle id="you" cx="80" cy="250" r="9" fill="#0b1f33"/>
           <circle cx="80" cy="250" r="4" fill="#11b5a4"/>
           <text x="80" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0b1f33" text-anchor="middle">YOU</text>
-          <text x="80" y="318" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d" text-anchor="middle">working professional</text>
+          <text id="youSub" x="80" y="318" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d" text-anchor="middle">working professional</text>
 
-          <!-- Baby marker -->
           <circle cx="95" cy="250" r="7" fill="#7c5cff"/>
           <text x="95" y="340" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#7c5cff" text-anchor="middle">baby born today</text>
 
-          <!-- Your arrow: now → +5y -->
-          <line x1="95" y1="230" x2="250" y2="175" stroke="#2f9e6b" stroke-width="3.5" marker-end="url(#arrowGreen)"/>
-          <text x="175" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2f9e6b">your target · ~5 years</text>
-          <text x="175" y="206" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">near enough to be right</text>
+          <line id="yourArrow" x1="95" y1="230" x2="250" y2="175" stroke="#2f9e6b" stroke-width="3.5" marker-end="url(#arrowGreen)"/>
+          <text id="yourLabel" x="175" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2f9e6b">your target · ~5 years</text>
+          <text id="yourSubLabel" x="175" y="206" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">near enough to be right</text>
 
-          <!-- Baby's arrow: now → +15y -->
-          <line x1="110" y1="250" x2="600" y2="130" stroke="#7c5cff" stroke-width="3.5" marker-end="url(#arrowPurple)"/>
+          <line id="babyArrow" x1="110" y1="250" x2="600" y2="130" stroke="#7c5cff" stroke-width="3.5" marker-end="url(#arrowPurple)"/>
           <text x="360" y="115" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#7c5cff">baby's target · ~15 years</text>
           <text x="360" y="131" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">far enough to matter — but deep in the fog</text>
 
-          <!-- Hedge arrow (dashed, splits from yours) -->
-          <line x1="200" y1="200" x2="430" y2="145" stroke="#ff6b4a" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrowOrange)"/>
-          <text x="330" y="135" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#ff6b4a">hedge · dashed</text>
-          <text x="330" y="151" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">a second bet kept alive</text>
+          <line id="hedgeArrow" x1="200" y1="200" x2="430" y2="145" stroke="#ff6b4a" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrowOrange)"/>
+          <text id="hedgeLabel" x="330" y="135" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#ff6b4a">hedge · dashed</text>
+          <text id="hedgeSub" x="330" y="151" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">a second bet kept alive</text>
 
-          <!-- Retraining cost curve -->
-          <path d="M80,430 Q200,425 320,415 Q440,390 560,330 Q680,250 800,170 Q920,110 1040,80" fill="none" stroke="url(#costCurve)" stroke-width="3"/>
-          <circle cx="560" cy="330" r="5" fill="#ff6b4a"/>
-          <text x="580" y="325" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#ff6b4a">cost curve</text>
-          <text x="580" y="341" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">cheap early · steep past year 3</text>
+          <path id="costPath" d="M80,430 Q200,425 320,415 Q440,390 560,330 Q680,250 800,170 Q920,110 1040,80" fill="none" stroke="url(#costCurve)" stroke-width="3"/>
+          <circle id="costDot" cx="560" cy="330" r="5" fill="#ff6b4a"/>
+          <text id="costLabel" x="580" y="325" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#ff6b4a">cost curve</text>
+          <text id="costSub" x="580" y="341" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d">cheap early · steep past year 3</text>
 
-          <!-- Insight box -->
           <rect x="80" y="380" width="940" height="130" rx="12" fill="#f4f7fa" stroke="#dfe7ee"/>
-          <text x="110" y="420" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="600" fill="#0b1f33">Aim near enough to be right, far enough to matter.</text>
-          <text x="110" y="450" font-family="Inter, sans-serif" font-size="13.5" fill="#3d4f61">Your runway is short, so your window is narrow — but your moat (existing skills) makes some futures</text>
-          <text x="110" y="470" font-family="Inter, sans-serif" font-size="13.5" fill="#3d4f61">reachable that are closed to others. The compounding skills are what pull this predictable band forward.</text>
-          <text x="110" y="490" font-family="Inter, sans-serif" font-size="13.5" fill="#3d4f61">The baby has twenty years to aim at fifteen — cheap. You have five to aim at five — expensive.</text>
+          <text id="insightTitle" x="110" y="420" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="600" fill="#0b1f33">Aim near enough to be right, far enough to matter.</text>
+          <text id="insight1" x="110" y="450" font-family="Inter, sans-serif" font-size="13.5" fill="#3d4f61">Your runway is short, so your window is narrow — but your moat makes some futures reachable that are closed to others.</text>
+          <text id="insight2" x="110" y="470" font-family="Inter, sans-serif" font-size="13.5" fill="#3d4f61">The compounding skills are what pull this predictable band forward with you.</text>
+          <text id="insight3" x="110" y="490" font-family="Inter, sans-serif" font-size="13.5" fill="#3d4f61">The baby has twenty years to aim at fifteen — cheap. You have five to aim at five — expensive.</text>
         </svg>
+      </div>
+
+      <div class="controls">
+        <label for="pos">Your position</label>
+        <input type="range" id="pos" min="0" max="20" value="0" step="1">
+        <span class="val" id="posVal">now · age 30</span>
       </div>
 
       <div class="insight">
@@ -165,15 +171,57 @@
       <ul class="layer-list">
         <li><span class="tag">Your arrow</span><div><h3>A near target, about five years out</h3><p>Close enough that your current moat still reaches it. Far enough that it is not just today's job with a new label.</p></div></li>
         <li><span class="tag">Baby's arrow</span><div><h3>A far target, about fifteen years out</h3><p>A newborn has twenty years of runway, so the far target is cheap to aim at — but it sits deep in the unpredictable zone, where almost nothing is knowable yet.</p></div></li>
-        <li><span class="tag">Feedback loop</span><div><h3>Skills compound; predictability moves with you</h3><p>Practice produces judgment; judgment produces better practice. Your personal predictable zone creeps forward even as the world's decays. That is the real advantage of being mid-career, not a fixed starting point.</p></div></li>
+        <li><span class="tag">Feedback loop</span><div><h3>Skills compound; predictability moves with you</h3><p>Practice produces judgment; judgment produces better practice. Your personal predictable zone creeps forward even as the world's decays.</p></div></li>
         <li><span class="tag">Moat</span><div><h3>Your current position constrains the reachable set</h3><p>A designer aiming at AI-assisted design has a shorter, more reliable arrow than one aiming at pure engineering. Not every future is in range from where you stand.</p></div></li>
         <li><span class="tag">Split arrow</span><div><h3>Primary bet plus a dashed hedge</h3><p>With a short runway you cannot afford one wrong bet. Keep two arrows alive: one solid commitment, one dashed option that costs little to maintain.</p></div></li>
-        <li><span class="tag">Cost curve</span><div><h3>Retraining is not linear</h3><p>Year one of learning something new is cheap. Year three is expensive. Past a point you are not upskilling — you are starting over, and the cost exceeds the value of the new skill.</p></div></li>
+        <li><span class="tag">Cost curve</span><div><h3>Retraining is not linear</h3><p>Year one of learning something new is cheap. Year three is expensive. Past a point you are not upskilling — you are starting over.</p></div></li>
       </ul>
     </div>
   </section>
 
   <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--sea-500)">Lifespan</span>
+        <h2>When each skill pays off</h2>
+        <p>The eight compounding skills are not equally urgent at every age. Each one has a window where it compounds hardest — and a cost to starting late.</p>
+      </div>
+      <div class="lifespan">
+        <div class="card">
+          <span class="age">Ages 15–25 · foundation</span>
+          <h3>Meta-learning &amp; taste</h3>
+          <p>The cheapest years to learn how to learn, and the most formative for taste — every project recalibrates what you notice. Starting late here means relearning the habit of learning.</p>
+          <div class="skills"><span>meta-learning</span><span>taste</span></div>
+        </div>
+        <div class="card">
+          <span class="age">Ages 22–35 · building</span>
+          <h3>Judgment &amp; writing</h3>
+          <p>Judgment compounds from the first decision you own; writing compounds from the first piece you publish. Both need volume, and volume needs runway. This is the window where the cost curve is still flat.</p>
+          <div class="skills"><span>judgment</span><span>writing</span></div>
+        </div>
+        <div class="card">
+          <span class="age">Ages 30–45 · compounding</span>
+          <h3>Distribution &amp; relationships</h3>
+          <p>Audience and trust take a decade to build and cannot be rushed. This is when the moat is deepest — and when the hedge matters most, because one wrong bet costs the most.</p>
+          <div class="skills"><span>distribution</span><span>relationships</span></div>
+        </div>
+        <div class="card">
+          <span class="age">Ages 40–60 · teaching</span>
+          <h3>Teaching &amp; systems thinking</h3>
+          <p>Teaching forces mastery and builds the tribe at the same time. Systems thinking tells you where the arrow lands. Both pay off hardest when you have something worth explaining.</p>
+          <div class="skills"><span>teaching</span><span>systems thinking</span></div>
+        </div>
+        <div class="card">
+          <span class="age">Any age · the multiplier</span>
+          <h3>Meta-learning again</h3>
+          <p>The only skill with no expiry. It makes every other skill cheaper to acquire — which is why it belongs on every card, not just the first.</p>
+          <div class="skills"><span>meta-learning</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
     <div class="wrap narrow">
       <div class="section-head">
         <span class="eyebrow" style="color:var(--sea-500)">Where this connects</span>
@@ -221,5 +269,103 @@
     </nav>
   </div>
 </footer>
+<script>
+(function () {
+  var slider = document.getElementById('pos');
+  var posVal = document.getElementById('posVal);
+  var you = document.getElementById('you');
+  var youSub = document.getElementById('youSub);
+  var yourArrow = document.getElementById('yourArrow');
+  var yourLabel = document.getElementById('yourLabel);
+  var yourSubLabel = document.getElementById('yourSubLabel');
+  var hedgeArrow = document.getElementById('hedgeArrow');
+  var hedgeLabel = document.getElementById('hedgeLabel');
+  var hedgeSub = document.getElementById('hedgeSub);
+  var costDot = document.getElementById('costDot');
+  var costLabel = document.getElementById('costLabel');
+  var costSub = document.getElementById('costSub');
+  var insightTitle = document.getElementById('insightTitle);
+  var insight1 = document.getElementById('insight1);
+  var insight2 = document.getElementById('insight2);
+  var insight3 = document.getElementById('insight3');
+  var band = document.getElementById('band);
+
+  var ages = ['18','20','22','24','26','28','30','32','34','36','38','40','42','44','46','48','50','52','54','56','58'];
+  var labels = ['student','early career','building','building','building','building','mid-career','mid-career','mid-career','established','established','established','senior','senior','senior','late career','late career','late career','late career','late career','late career'];
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function update() {
+    var t = slider.value / 20; // 0 at now, 1 at +20y
+    var x = lerp(80, 800, t); // pixel position on timeline
+    var age = ages[slider.value];
+    var label = labels[slider.value];
+
+    // Your position
+    you.setAttribute('cx', x);
+    youSub.textContent = label + ' · age ' + age;
+    youSub.setAttribute('x', x);
+
+    // Your arrow: ~5 years ahead, scaled by position
+    var targetX = lerp(x + 40, 980, Math.min(t + 0.25, 1));
+    var targetY = lerp(175, 130, t);
+    yourArrow.setAttribute('x1', x + 15);
+    yourArrow.setAttribute('y1', 230 - t * 20);
+    yourArrow.setAttribute('x2', targetX);
+    yourArrow.setAttribute('y2', targetY);
+    yourLabel.setAttribute('x', (x + targetX) / 2);
+    yourLabel.setAttribute('y', targetY - 12);
+    yourLabel.textContent = 'your target · ~' + Math.round(5 + t * 5) + ' years';
+    yourSubLabel.setAttribute('x', (x + targetX) / 2);
+    yourSubLabel.setAttribute('y', targetY + 4);
+
+    // Hedge arrow: splits from yours, ~8 years ahead
+    var hx = lerp(x + 60, 900, Math.min(t + 0.4, 1));
+    var hy = lerp(145, 120, t);
+    hedgeArrow.setAttribute('x1', x + 30);
+    hedgeArrow.setAttribute('y1', 200 - t * 15);
+    hedgeArrow.setAttribute('x2', hx);
+    hedgeArrow.setAttribute('y2', hy);
+    hedgeLabel.setAttribute('x', (x + hx) / 2 + 20);
+    hedgeLabel.setAttribute('y', hy - 12);
+    hedgeSub.setAttribute('x', (x + hx) / 2 + 20);
+    hedgeSub.setAttribute('y', hy + 4);
+
+    // Cost curve: steepens as you move right (less runway)
+    var c1 = lerp(415, 380, t);
+    var c2 = lerp(390, 300, t);
+    var c3 = lerp(330, 220, t);
+    var costPath = 'M80,430 Q200,' + c1 + ' 320,' + (c1 - 10) + ' Q440,' + c2 + ' 560,' + c3 + ' Q680,' + (c3 - 80) + ' 800,' + (c3 - 160) + ' Q920,' + (c3 - 220) + ' 1040,' + (c3 - 250);
+    document.getElementById('costPath').setAttribute('d', costPath);
+    // Cost dot sits at your position's cost
+    var cy = lerp(430, 170, t * t); // quadratic — cost rises faster than linear
+    costDot.setAttribute('cx', x);
+    costDot.setAttribute('cy', cy);
+    costLabel.setAttribute('x', x + 20);
+    costLabel.setAttribute('y', cy - 5);
+    costSub.setAttribute('x', x + 20);
+    costSub.setAttribute('y', cy + 11);
+    costSub.textContent = t < 0.3 ? 'cheap early · runway intact' : (t < 0.6 ? 'steepening · year 3+ territory' : 'steep · starting over costs more than switching');
+
+    // Predictability band: shrinks as you move right
+    var bandTop = lerp(130, 200, t);
+    band.setAttribute('d', 'M80,250 L80,' + bandTop + ' Q' + lerp(260, 400, t) + ',' + lerp(150, 210, t) + ' ' + lerp(440, 560, t) + ',' + lerp(190, 235, t) + ' Q' + lerp(620, 700, t) + ',' + lerp(230, 245, t) + ' 800,250 L800,250 L' + lerp(440, 560, t) + ',250 L' + lerp(260, 400, t) + ',250 L80,250 Z);
+
+    // Insight box
+    posVal.textContent = 'now +' + slider.value + 'y · age ' + age;
+    insightTitle.textContent = t < 0.25 ? 'Aim near enough to be right, far enough to matter.' :
+                               t < 0.5 ? 'Your window is narrowing — hedge harder.' :
+                               t < 0.75 ? 'The cost curve is steep here. Choose before you commit.' :
+                               'Late start: meta-learning is the only cheap skill left.';
+    insight1.textContent = 'Position +' + slider.value + ' years. Predictable band: ' + Math.round((1 - t) * 100) + '% of what it was at now. Your arrow: ' + Math.round(5 + t * 5) + ' years out.';
+    insight2.textContent = t < 0.4 ? 'The compounding skills are what pull this predictable band forward with you.' :
+                            'At this position, distribution and relationships matter most — they cannot be rushed.';
+    insight3.textContent = 'The baby, born at your position, still has ' + Math.round(20 - t * 20) + ' years of runway. You have ' + Math.round(5 * (1 - t * 0.6)) + '.';
+  }
+
+  slider.addEventListener('input', update);
+  update();
+})();
+</script>
 </body>
 </html>
