@@ -22,6 +22,8 @@
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --shadow: 0 1px 2px rgba(4, 23, 38, 0.06), 0 8px 24px rgba(4, 23, 38, 0.06);
+  /* learn site layer (prefixed; shared tokens untouched) */
+  --learn-alert-ink: #a8351f; /* --bad darkened for small labels on --coral-soft (AA 5.56:1) */
 }
 
 *,
@@ -163,8 +165,16 @@ a:hover {
   font: 600 0.78rem / 1.3 var(--mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--sea-500);
   margin: 0 0 0.85rem;
+}
+
+/* Brand rule: --sea-500 eyebrows on light surfaces, --teal only on dark bands. */
+.hero .eyebrow,
+.page-hero .eyebrow,
+.block.dark .eyebrow,
+.footer .eyebrow {
+  color: var(--teal);
 }
 
 .hero h1 {
@@ -202,12 +212,12 @@ a:hover {
 
 .btn-primary {
   background: var(--coral);
-  color: #fff;
+  color: var(--sea-900);
   box-shadow: 0 6px 20px rgba(255, 107, 74, 0.35);
 }
 
 .btn-primary:hover {
-  color: #fff;
+  color: var(--sea-900);
   transform: translateY(-1px);
 }
 
@@ -404,6 +414,12 @@ a.card:hover {
   color: var(--teal);
 }
 
+.footer .wrap > div > a,
+.siblings a {
+  text-decoration: underline;
+  text-decoration-color: rgba(199, 219, 230, 0.5);
+}
+
 .footer nav {
   display: flex;
   flex-wrap: wrap;
@@ -461,6 +477,14 @@ a.card:hover {
     padding: 48px 0 40px;
   }
 
+  /* Smaller sea glow on phones so the teal eyebrow keeps AA contrast. */
+  .hero {
+    background:
+      radial-gradient(600px 320px at 100% -10%, #0f6e8c 0%, transparent 60%),
+      radial-gradient(500px 300px at 0% 110%, rgba(255, 107, 74, 0.18) 0%, transparent 55%),
+      linear-gradient(180deg, var(--sea-800), var(--sea-900));
+  }
+
   .cards {
     grid-template-columns: 1fr;
   }
@@ -500,12 +524,12 @@ a.card:hover {
 .crumbs {
   font: 500 0.82rem / 1.4 var(--mono);
   letter-spacing: 0.04em;
-  color: #9dbccb;
+  color: #c7dbe6;
   margin: 0 0 1rem;
 }
 
 .crumbs a {
-  color: #c7dbe6;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -630,7 +654,7 @@ a.card:hover {
 }
 
 .pause .label {
-  color: var(--bad);
+  color: var(--learn-alert-ink);
 }
 
 .pause ol {
@@ -921,7 +945,7 @@ a.card:hover .more {
 .cm-fit {
   font: 700 0.66rem / 1 var(--mono);
   letter-spacing: 0.06em;
-  color: var(--bad);
+  color: var(--learn-alert-ink);
   background: var(--coral-soft);
   border-radius: 999px;
   padding: 4px 8px;
@@ -1097,7 +1121,7 @@ a.card:hover .more {
   padding: 8px 11px;
 }
 .otd-monthnav a:hover { border-color: var(--teal); color: var(--sea-900); }
-.otd-monthnav a.is-now { background: var(--coral); border-color: var(--coral); color: #fff; }
+.otd-monthnav a.is-now { background: var(--coral); border-color: var(--coral); color: var(--sea-900); }
 .otd-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1133,7 +1157,7 @@ a.card:hover .more {
   font: 700 0.68rem / 1 var(--mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--sea-900);
   background: var(--coral);
   border-radius: 999px;
   padding: 5px 9px;
@@ -1184,7 +1208,7 @@ a.card:hover .more {
 .vchip.v-direct { background: var(--otd-direct); }
 .ochip { color: var(--sea-700); background: var(--teal-soft); }
 .otd-meta .src { color: var(--sea-500); word-break: break-word; }
-.today-flag { color: #fff; background: var(--coral); }
+.today-flag { color: var(--sea-900); background: var(--coral); }
 .otd-ev.is-today { background: var(--coral-soft); }
 .otd-ev[hidden], .otd-actions[hidden] { display: none; }
 .otd-empty { margin: 0; padding: 0 1.2rem 1.1rem; font-size: 0.9rem; color: var(--muted); }
@@ -1226,6 +1250,11 @@ a.card:hover .more {
   margin: 1rem 0;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 2px;
 }
 
 .table-scroll .model-table {

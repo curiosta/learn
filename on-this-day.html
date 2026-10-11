@@ -62,7 +62,7 @@
   <section class="block compact" id="months">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow" style="color:var(--sea-500)">Twelve memory cards</span>
+        <span class="eyebrow">Twelve memory cards</span>
         <h2>Pick a month, turn the card</h2>
         <p>Each card holds every feat in that month, newest first, back to the oldest; the range on the card face reads the same way, newest–oldest. The coloured edge names the verb; the tag names what was being controlled. Read one card a day and ask the Socratic question: what limit did they hit, and what did they change to get past it?</p>
       </div>
@@ -404,7 +404,7 @@
   <section class="block alt" id="method">
     <div class="wrap otd-method">
       <div class="section-head">
-        <span class="eyebrow" style="color:var(--sea-500)">Method</span>
+        <span class="eyebrow">Method</span>
         <h2>How dates were checked</h2>
       </div>
       <ul>
@@ -453,7 +453,7 @@
     cur.classList.add("is-now");
     var b = cur.querySelector(".mc-badge"); if (b) b.hidden = false;
     var pill = document.querySelector('.otd-monthnav a[href="#' + cur.id + '"]');
-    if (pill) { pill.classList.add("is-now"); pill.setAttribute("aria-label", MONTHS[m - 1] + " (this month)"); }
+    if (pill) { pill.classList.add("is-now"); pill.setAttribute("aria-label", pill.textContent + " \u2014 " + MONTHS[m - 1] + ", this month"); }
     var jump = document.getElementById("otd-jump");
     if (jump) { jump.href = "#" + cur.id; jump.textContent = "Open " + MONTHS[m - 1] + "\u2019s card"; }
   }
