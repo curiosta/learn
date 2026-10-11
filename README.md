@@ -26,7 +26,7 @@ Static site for **learn.curiosta.com** — timeless fundamentals (scientific tem
 | `made-by-human.html` | Made by human is the new luxury (model page) |
 | `tribe-building.html` | Tribe building is the next big thing (model page) |
 | `compounding-skills.html` | Skills that compound — eight career skills mapped to the themes |
-| `aiming-diagram.html` | The aiming diagram — interactive lead-time SVG + lifespan skill breakdown |
+| `aiming-diagram.html` | The aiming diagram — four static age cards (baby, 18, 30, 50) + lifespan skill breakdown |
 | `resources.html` | Skills & resources index — tools and refreshers that support the lessons |
 | `resources/triz-refresher.html` | TRIZ refresher (supports Theme 02 · First principles) |
 | `control-map.html` | Control map — five verbs × five objects of practical power over mass and energy, kitchen → industry → ISRO/NASA/CERN/DRDO → record on Earth; Kardashev scale |
