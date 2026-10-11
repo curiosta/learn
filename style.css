@@ -111,12 +111,21 @@ a:hover {
 
 .sectionnav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 4px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
   font: 500 0.88rem var(--sans);
 }
 
+.sectionnav::-webkit-scrollbar {
+  display: none;
+}
+
 .sectionnav a {
+  flex: 0 0 auto;
+  white-space: nowrap;
   color: #c7dbe6;
   text-decoration: none;
   padding: 7px 12px;
@@ -131,6 +140,11 @@ a:hover {
 .sectionnav a[aria-current="page"] {
   color: var(--sea-900);
   background: var(--teal);
+}
+
+.sectionnav a[aria-current="true"] {
+  color: #fff;
+  background: rgba(17, 181, 164, 0.22);
 }
 
 /* Dark hero */
@@ -451,8 +465,29 @@ a.card:hover {
     grid-template-columns: 1fr;
   }
 
+  :root {
+    --nav-h: 100px;
+  }
+
+  .topbar .wrap {
+    height: auto;
+    min-height: var(--nav-h);
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 6px 1rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
   .sectionnav {
-    display: none;
+    flex: 1 0 100%;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;
+    padding: 0 20px 2px;
+  }
+
+  .sectionnav a {
+    padding: 8px 12px;
   }
 
   .theme {
@@ -768,14 +803,14 @@ details.reveal > :last-child {
   padding: 6px 10px;
 }
 
-.card.resource .more {
+.card .more {
   display: inline-block;
   margin-top: 0.9rem;
   font: 600 0.92rem var(--sans);
   color: var(--sea-500);
 }
 
-a.card.resource:hover .more {
+a.card:hover .more {
   color: var(--coral);
 }
 
@@ -1170,3 +1205,121 @@ a.card.resource:hover .more {
 }
 @media (prefers-reduced-motion: reduce) { .mcard { transition: none; } }
 /* ---------- /On this day ---------- */
+
+/* ---------- Site tidy layer (2026-10) ---------- */
+.hero .lede a,
+.page-hero .lede a {
+  color: #fff;
+  text-decoration-color: var(--teal);
+  text-decoration-thickness: 2px;
+}
+
+.hero .lede a:hover,
+.page-hero .lede a:hover {
+  color: var(--coral);
+  text-decoration-color: var(--coral);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.table-scroll .model-table {
+  margin: 0;
+  box-shadow: none;
+}
+
+.cards.cards-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.lesson-list {
+  margin: 0.6rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.lesson-list li {
+  margin: 0.35rem 0;
+}
+
+.lesson-list a,
+.card h3 a {
+  text-decoration: none;
+}
+
+.lesson-list a:hover,
+.card h3 a:hover {
+  text-decoration: underline;
+}
+
+.section-head h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-head h2 a:hover {
+  color: var(--coral);
+}
+
+.theme-status {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font: 600 0.72rem / 1.2 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.prep-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+}
+
+.prep-list a {
+  display: block;
+  padding: 10px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.prep-list a:hover {
+  border-color: var(--coral);
+}
+
+@media (max-width: 640px) {
+  .cards.cards-2,
+  .prep-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer nav a {
+    display: inline-block;
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .model-table th,
+  .model-table td {
+    padding: 0.55rem 0.5rem;
+  }
+
+  .model-table th {
+    letter-spacing: 0.04em;
+  }
+}

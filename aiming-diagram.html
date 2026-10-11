@@ -22,13 +22,13 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306243a'/%3E%3Cpath d='M8 22h16M10 22V12l6 4 6-4v10' stroke='%2311b5a4' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='9' r='2.2' fill='%23ff6b4a'/%3E%3C/svg%3E">
 <style>
-  .diagram-wrap{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:1.2rem;overflow-x:auto}
+  .diagram-wrap{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem;overflow-x:auto}
   .diagram-wrap svg{display:block;width:100%;min-width:720px;height:auto}
   .controls{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:1rem}
   .controls label{font-family:var(--mono);font-size:.78rem;font-weight:600;color:var(--sea-500);text-transform:uppercase;letter-spacing:.06em}
   .controls input[type=range]{width:220px;accent-color:var(--sea-500)}
   .controls .val{font-family:var(--mono);font-size:.85rem;color:var(--ink);min-width:4.5rem}
-  .insight{margin-top:1.2rem;padding:1rem 1.2rem;border-left:3px solid var(--sea-500);background:var(--bg-2);border-radius:0 10px 10px 0}
+  .insight{margin-top:1.2rem;padding:1rem 1.2rem;border-left:3px solid var(--sea-500);background:var(--card);border-radius:0 10px 10px 0}
   .insight strong{color:var(--ink)}
   .layer-list{list-style:none;padding:0;margin:0}
   .layer-list li{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
@@ -37,12 +37,12 @@
   .layer-list h3{margin:0 0 .3rem;font-size:1.05rem}
   .layer-list p{margin:0;color:var(--muted);font-size:.95rem;max-width:62ch}
   .lifespan{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-  .lifespan .card{border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;background:var(--bg)}
+  .lifespan .card{border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;background:var(--card)}
   .lifespan .card .age{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--sea-500);text-transform:uppercase;letter-spacing:.06em}
   .lifespan .card h3{margin:.4rem 0 .4rem;font-size:1.05rem}
   .lifespan .card p{margin:0;color:var(--muted);font-size:.9rem}
   .lifespan .card .skills{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.35rem}
-  .lifespan .card .skills span{font-family:var(--mono);font-size:.7rem;font-weight:600;padding:.2rem .5rem;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink)}
+  .lifespan .card .skills span{font-family:var(--mono);font-size:.7rem;font-weight:600;padding:.2rem .5rem;border-radius:999px;background:var(--sand);border:1px solid var(--line);color:var(--ink)}
   @media (max-width:640px){.layer-list li{flex-direction:column;gap:.3rem}.layer-list .tag{flex:none}}
 </style>
 </head>
@@ -56,12 +56,11 @@
     <nav class="sectionnav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="curriculum.html">Curriculum</a>
-      <a href="made-by-human.html">Made by human</a>
-      <a href="tribe-building.html">Tribe building</a>
-      <a href="compounding-skills.html">Compounding skills</a>
-      <a href="aiming-diagram.html" aria-current="page">Aiming diagram</a>
+      <a href="lessons/index.html">Lessons</a>
+      <a href="ideas.html" aria-current="true">Ideas</a>
       <a href="control-map.html">Control map</a>
       <a href="on-this-day.html">On this day</a>
+      <a href="resources.html">Skills &amp; resources</a>
     </nav>
   </div>
 </header>
@@ -69,6 +68,7 @@
 <main>
   <section class="page-hero">
     <div class="wrap narrow">
+      <p class="crumbs"><a href="ideas.html">Ideas</a> / Aiming diagram</p>
       <span class="eyebrow">Career · lead time</span>
       <h1>The aiming diagram.</h1>
       <p class="lede">Drag your position on the timeline and watch predictability, your arrow, the baby's arrow, the hedge, and the retraining cost curve recalculate. Below: when each compounding skill pays off across a lifespan.</p>
@@ -118,8 +118,8 @@
           <text x="860" y="150" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8a97a6">unpredictable</text>
 
           <circle id="you" cx="80" cy="250" r="9" fill="#0b1f33"/>
-          <circle cx="80" cy="250" r="4" fill="#11b5a4"/>
-          <text x="80" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0b1f33" text-anchor="middle">YOU</text>
+          <circle id="youDot" pointer-events="none" cx="80" cy="250" r="4" fill="#11b5a4"/>
+          <text id="youLabel" x="80" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0b1f33" text-anchor="middle">YOU</text>
           <text id="youSub" x="80" y="318" font-family="Inter, sans-serif" font-size="11" fill="#5a6b7d" text-anchor="middle">working professional</text>
 
           <circle cx="95" cy="250" r="7" fill="#7c5cff"/>
@@ -259,12 +259,12 @@
     <nav aria-label="Footer">
       <a href="index.html">Home</a>
       <a href="curriculum.html">Curriculum</a>
-      <a href="made-by-human.html">Made by human</a>
-      <a href="tribe-building.html">Tribe building</a>
-      <a href="compounding-skills.html">Compounding skills</a>
-      <a href="aiming-diagram.html">Aiming diagram</a>
+      <a href="curriculum.html#how-we-teach">How we teach</a>
+      <a href="lessons/index.html">Lessons</a>
+      <a href="ideas.html">Ideas</a>
       <a href="control-map.html">Control map</a>
       <a href="on-this-day.html">On this day</a>
+      <a href="resources.html">Skills &amp; resources</a>
       <a href="https://www.curiosta.com/">Curiosta</a>
     </nav>
   </div>
@@ -278,6 +278,8 @@
   var posVal = $('posVal');
   var you = $('you');
   var youSub = $('youSub');
+  var youDot = $('youDot');
+  var youLabel = $('youLabel');
   var yourArrow = $('yourArrow');
   var yourLabel = $('yourLabel');
   var yourSubLabel = $('yourSubLabel');
@@ -298,14 +300,14 @@
     yourLabel:yourLabel,yourSubLabel:yourSubLabel,hedgeArrow:hedgeArrow,hedgeLabel:hedgeLabel,
     hedgeSub:hedgeSub,costDot:costDot,costLabel:costLabel,costSub:costSub,
     insightTitle:insightTitle,insight1:insight1,insight2:insight2,insight3:insight3,
-    band:band,costPath:costPath);
+    band:band,costPath:costPath};
   var missing = [];
   for (var k in required) { if (!required[k]) missing.push(k); }
   if (missing.length) {
-    var err = document.createElement('div);
+    var err = document.createElement('div');
     err.style.cssText = 'background:#ffecec;border:1px solid #ff6b4a;color:#8a1f11;padding:1rem;border-radius:8px;margin:1rem 0;font-family:monospace;font-size:.85rem';
     err.textContent = 'Diagram script could not find: ' + missing.join(', ') + '. Try a hard refresh (Ctrl+Shift+R).';
-    var main = document.querySelector('main);
+    var main = document.querySelector('main');
     if (main) main.insertBefore(err, main.firstChild);
     return;
   }
@@ -322,6 +324,8 @@
     var label = labels[slider.value];
 
     you.setAttribute('cx', x);
+    if (youDot) youDot.setAttribute('cx', x);
+    if (youLabel) youLabel.setAttribute('x', x);
     youSub.textContent = label + ' · age ' + age;
     youSub.setAttribute('x', x);
 
