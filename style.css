@@ -1352,3 +1352,21 @@ a.card:hover .more {
     letter-spacing: 0.04em;
   }
 }
+
+/* ---------- Comments (Giscus) ---------- */
+/* Content pages only; markup is the marked giscus block before the footer. */
+.block.comments {
+  background: var(--sand);
+  border-top: 1px solid rgba(4, 23, 38, 0.08);
+}
+.comments-head,
+.comments-embed {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 0;
+}
+.comments-head { margin-bottom: 1.5rem; }
+.comments-embed .giscus,
+.comments-embed .giscus-frame { width: 100%; max-width: 100%; }
+/* ---------- /Comments ---------- */
