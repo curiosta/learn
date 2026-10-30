@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cool · Control · learn.curiosta.com</title>
+<meta name="description" content="Cool: how we pull heat out of matter, from sweat and a fridge to liquid nitrogen, ISRO’s cryogenic stages, CERN’s 1.9 K magnets and Webb’s 7 K detectors, to 38 picokelvin. Sourced numbers, worked examples, the record and its distance from normal.">
+<link rel="canonical" href="https://learn.curiosta.com/control/cool.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="learn.curiosta.com">
+<meta property="og:title" content="Cool · Control · learn.curiosta.com">
+<meta property="og:description" content="Cool: how we pull heat out of matter, from sweat and a fridge to liquid nitrogen, ISRO’s cryogenic stages, CERN’s 1.9 K magnets and Webb’s 7 K detectors, to 38 picokelvin. Sourced numbers, worked examples, the record and its distance from normal.">
+<meta property="og:url" content="https://learn.curiosta.com/control/cool.html">
+<meta property="og:image" content="https://learn.curiosta.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="learn.curiosta.com — Timeless fundamentals for a world with AGI.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306243a'/%3E%3Cpath d='M8 22h16M10 22V12l6 4 6-4v10' stroke='%2311b5a4' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='9' r='2.2' fill='%23ff6b4a'/%3E%3C/svg%3E">
+</head>
+<body class="ctl-page">
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html" aria-label="learn home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#06243a"/><path d="M8 22h16M10 22V12l6 4 6-4v10" stroke="#11b5a4" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="9" r="2.2" fill="#ff6b4a"/></svg>
+      <span>learn<b>.</b></span>
+    </a>
+    <nav class="sectionnav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../lessons/index.html">Lessons</a>
+      <a href="../ideas.html">Ideas</a>
+      <a href="../control-map.html" aria-current="true">Control map</a>
+      <a href="../on-this-day.html">On this day</a>
+      <a href="../resources.html">Skills &amp; resources</a>
+    </nav>
+  </div>
+</header>
+<main class="ctl-main">
+<section class="page-hero ctl-hero" aria-labelledby="pg-h1">
+  <div class="wrap">
+    <div>
+      <p class="crumbs"><a href="../control-map.html">Control map</a> / <a href="regulate.html">Regulate</a> / Cool</p>
+      <span class="eyebrow">Control · Regulate · Cool</span>
+      <h1 id="pg-h1">How cold can we <em>make</em> things?</h1>
+      <p class="lede">You cannot pour cold in. Cooling means carrying heat out, uphill, from a cold place to a warmer one, and it gets harder with every degree. From your own sweat to 38 trillionths of a degree above absolute zero.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#ch-1">Start with the question</a>
+        <a class="btn btn-ghost" href="regulate.html">Part of Regulate</a>
+      </div>
+    </div>
+    <ul class="ctl-stats" aria-label="Key numbers"><li class="ctl-stat"><span class="n">2.4 kJ</span><span class="l">Carried off by each gram of sweat that evaporates at 37 °C</span><span class="s"><a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST WebBook</a></span></li><li class="ctl-stat"><span class="n">−196 °C</span><span class="l">Liquid nitrogen boils (77.35 K)</span><span class="s"><a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST</a></span></li><li class="ctl-stat"><span class="n">1.9 K</span><span class="l">LHC magnets, colder than outer space</span><span class="s"><a class="cite" href="https://home.cern/science/engineering/cryogenics-low-temperatures-high-performance">CERN</a></span></li><li class="ctl-stat"><span class="n">38 pK</span><span class="l">Coldest ever made, 2021</span><span class="s"><a class="cite" href="https://doi.org/10.1103/PhysRevLett.127.100401">PRL 2021</a></span></li></ul>
+  </div>
+</section>
+<section class="ctl-first" aria-labelledby="first-h">
+  <div class="wrap">
+    <div class="ctl-first-card">
+      <h2 id="first-h">Start here: sweat and a matka</h2>
+      <p>On a hot afternoon you sweat, and a breeze feels wonderful. A clay matka keeps drinking water cooler than the room though nothing inside it is cold. Neither has a motor. Where does the heat go?</p><div class="pause"><span class="label">Pause and answer</span><ol><li>What does water need in order to evaporate?</li><li>Where does the energy for evaporation come from?</li><li>Why might a humid day make sweat feel useless?</li></ol></div><details class="reveal"><summary>Compare your reasoning</summary><p>To turn liquid water into vapour, molecules must break free of their neighbours, and that costs energy. Evaporating sweat takes it from your skin; water seeping through the matka’s walls takes it from the water inside. At skin temperature each gram that evaporates carries off about 2.4&nbsp;kJ (NIST). On a humid day the air is already loaded with vapour, evaporation slows, and the cooling fails. That is the wet-bulb limit on <a href="normal-on-earth.html">Normal on Earth</a>. A fridge does the same trick in a closed loop, with a pump to make it work in any weather.</p></details>
+    </div>
+  </div>
+</section>
+<section class="block ctl-value" id="value" aria-labelledby="value-h">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Where the value is</span><h2 id="value-h">Where does cooling pay best per unit of energy?</h2><p>Cooling rarely changes what matter is. It mostly <em>holds</em> matter: a potato kept firm until prices recover, oxygen kept liquid until a hospital needs it. Below we rank three cooling processes by <a class="gl" href="glossary.html#value-added">value added</a> per kilowatt-hour. Value added means the later or delivered price minus the starting price and the storage charges. Every figure is dated.</p></div>
+    <p class="ctl-quadline"><strong>Where this sits on the value quadrant:</strong> <strong>Time</strong> mainly. Cold storage holds matter until a later, higher price, and cold chains add <strong>Space</strong> by letting matter travel to where demand is. <a href="../control-map.html#value-quadrant">See the quadrant</a>.</p>
+    <div class="table-scroll" role="region" aria-label="Cool: value added per kWh, ranked (our estimate from the cited prices)" tabindex="0"><table class="ctl-data"><caption>Cool: value added per kWh, ranked (our estimate from the cited prices)</caption><thead><tr><th scope="col">Rank</th><th scope="col">Process or material</th><th scope="col">Energy per kg</th><th scope="col">Selling price</th><th scope="col">Main input cost</th><th scope="col">Value added per kg</th><th scope="col">Value added per kWh <span class="vh-est">(our estimate)</span></th></tr></thead><tbody><tr><td>1</td><td>Potato cold storage, Agra season to October (India)</td><td>9.8–16.2 kWh per tonne per season = 0.010–0.016 kWh/kg (<a class="cite" href="https://openscholar.dut.ac.za/server/api/core/bitstreams/01cfcfdc-144f-4607-bab7-636dbb1bfc28/content">Singh et al. 2014</a>)</td><td>All-India wholesale ₹1,708.93/qtl = ₹17.09/kg, 30 Oct 2026 (<a class="cite" href="https://fcainfoweb.nic.in/">DoCA</a>)</td><td>Agra mandi ≈ ₹800/qtl, Mar 2026 (<a class="cite" href="https://www.amarujala.com/uttar-pradesh/agra/market-slowdown-and-smallpox-hit-potato-farmers-face-a-loss-on-holi-agra-news-c-421-1-sagr1004-2703-2026-03-01">Amar Ujala</a>); storage rent ₹340–380/qtl as quoted in <a class="cite" href="https://www.thehindu.com/news/national/uttar-pradesh/potato-farming-in-uttar-pradesh-has-entered-a-structural-crisis-says-samajwadi-party/article70776533.ece">The Hindu</a>; 5.96% post-harvest loss (<a class="cite" href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2151371">NABCONS via PIB</a>)</td><td>≈ ₹4.3–4.7/kg</td><td>≈ ₹264–477</td></tr><tr><td>2</td><td>Liquid medical oxygen (air separation)</td><td>600–800 kWh/t = 0.6–0.8 kWh/kg (<a class="cite" href="https://journals.pan.pl/Content/94731/PDF/11_paper.pdf?handler=pdf">Arch. Thermodynamics</a>)</td><td>Ceiling price ₹15.22/m³ ≈ ₹10.65/kg, set Sep 2020 (<a class="cite" href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=1659266">NPPA via PIB</a>)</td><td>Air: free</td><td>≈ ₹10.65/kg before plant, labour and delivery</td><td>≈ ₹13–18</td></tr><tr><td>3</td><td>Block ice for fish (Bhimavaram, AP)</td><td>83–118 kWh/t = 0.083–0.118 kWh/kg (<a class="cite" href="https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf">BEE/SAMEEEKSHA</a>)</td><td>Cluster turnover ≈ ₹36 crore on 376,131 t a year ≈ ₹0.96/kg, c. 2010 (<a class="cite" href="https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf">BEE/SAMEEEKSHA</a>, our division)</td><td>Electricity at ₹3.75/kWh ≈ ₹0.31–0.44/kg (<a class="cite" href="https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf">same profile</a>)</td><td>≈ ₹0.52–0.65/kg over electricity, before labour, water and capital</td><td>≈ ₹4.4–7.8</td></tr></tbody></table></div>
+    <div class="ctl-worked"><span class="lbl">Working: how each estimate was made</span><ul><li><strong>Potato.</strong> Sale value after loss: <code>₹17.09 × (1 − 0.0596) ≈ ₹16.07/kg</code>. Minus the Agra farm-gate price <code>₹8.00</code> and rent <code>₹3.40–3.80</code> leaves <code>≈ ₹4.27–4.67/kg</code>. Per kWh: <code>4.27 ÷ 0.0162 ≈ 264</code> and <code>4.67 ÷ 0.0098 ≈ 477</code>. Caution: the two prices are from different markets and dates (an Agra mandi in March, an all-India average in October), and the storage rent already pays the store’s electricity bill. The figure shows how little electricity a time arbitrage uses compared with the price gap it captures. It is not a forecast.</li><li><strong>Oxygen.</strong> At 0&nbsp;°C and 1&nbsp;atm a cubic metre of oxygen weighs about 1.43&nbsp;kg (<a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST WebBook</a>). So <code>₹15.22 ÷ 1.43 ≈ ₹10.65/kg</code>, and <code>10.65 ÷ 0.8 ≈ 13</code> to <code>10.65 ÷ 0.6 ≈ 18</code> rupees per kWh. This is a regulated ceiling price, not a market price.</li><li><strong>Ice.</strong> The Bhimavaram cluster profile gives a turnover of about ₹36 crore on 376,131&nbsp;t a year, and a power tariff of ₹3.75/kWh (c. 2010). <code>₹36,00,00,000 ÷ 37,61,31,000 kg ≈ ₹0.96/kg</code>. Power: <code>0.083–0.118 kWh × ₹3.75 ≈ ₹0.31–0.44/kg</code>. Left over: <code>≈ ₹0.52–0.65/kg</code>; per kWh <code>0.52 ÷ 0.118 ≈ 4.4</code> to <code>0.65 ÷ 0.083 ≈ 7.8</code>. This is turnover over electricity, not profit, and the figures are about 15 years old. A current ice price is <span class="ctl-tbc">TBC</span>. See <a href="freeze.html">Freeze</a>.</li></ul><p>Break-even for a stored potato: <code>(₹800 + ₹380) ÷ 0.9404 ≈ ₹1,255/qtl</code>. Below that October price, storing lost money.</p></div>
+    <p class="ctl-valnote">Business words on this page (unit cost, gross margin, contribution margin and others) are defined in plain language in the <a href="glossary.html">glossary</a>. Figures marked “our estimate” are our arithmetic from the cited prices; they are for learning, not business or investment advice.</p>
+    <h3 class="ctl-acts-h" id="actions-h">What you can do with this</h3><ul class="ctl-actions" aria-labelledby="actions-h"><li><h4>Small business: know your break-even before you store</h4><p>Row 1 only pays if the later price clears the purchase price, the rent and the loss. Using the figures above, <a class="gl" href="glossary.html#break-even">break-even</a> was about ₹1,255 per quintal. A farmer group or trader can redo the sum each season with its own mandi price and rent before booking space. A store’s fixed costs are spread over every bag, which is why utilisation matters (next card).</p></li><li><h4>Home habit: test the “full store” rule on your own freezer</h4><p>Singh et al. found that each extra 0.1 of capacity utilisation cut energy use by about 1.46 kWh per tonne (row 1). If your home has a separate electricity meter reading, compare a week with a near-empty freezer against a week with a fuller one. Whether the effect is large at home is <span class="ctl-tbc">TBC</span>: measure it rather than assume it.</p></li><li><h4>Skill: refrigeration servicing</h4><p>Every row here depends on compressors, insulation and seals kept in good order. Servicing skills keep a cold store’s <a class="gl" href="glossary.html#variable-cost">variable cost</a> down. They also travel well, from a village cold store to a hospital oxygen plant.</p></li></ul>
+  </div>
+</section>
+<section class="block" aria-labelledby="chapters-h">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">01 · The science</span><h2 id="chapters-h">From sweat to picokelvin</h2><p>The physics in plain words, a worked fridge, the climb, the record and its distance from normal, something to try, and the limits.</p></div>
+    <nav aria-label="Chapters"><ol class="ctl-chapters"><li><a href="#ch-1"><span class="n">01</span><span class="t">The physics in plain words</span><span class="d">Heat runs downhill; cooling pushes it uphill</span></a></li><li><a href="#ch-2"><span class="n">02</span><span class="t">A worked fridge</span><span class="d">The Carnot limit: about 8.9</span></a></li><li><a href="#ch-3"><span class="n">03</span><span class="t">The climb</span><span class="d">Kitchen, industry, ISRO, NASA, CERN</span></a></li><li><a href="#ch-4"><span class="n">04</span><span class="t">The record, and how far it goes</span><span class="d">About 7.6 trillion times colder than normal</span></a></li><li><a href="#ch-5"><span class="n">05</span><span class="t">Try it: feel evaporation</span><span class="d">Two thermometers and a wet cloth</span></a></li><li><a href="#ch-6"><span class="n">06</span><span class="t">Limits: what stops us</span><span class="d">Absolute zero, the bill, and heat leaks</span></a></li></ol></nav>
+    <article class="ctl-chapter" id="ch-1" aria-labelledby="ch-1-h">
+      <header><span class="chno">01</span><h3 id="ch-1-h">The physics in plain words</h3></header>
+      <p class="hook">Every cooler is a heat pump: it moves heat from cold to hot, and pays for it.</p>
+      <div class="body">
+<p>Heat flows by itself only from hot to cold. To make something colder than its surroundings you must carry heat out against that flow, which costs work. Three main tricks:</p><ul><li><strong>Evaporation.</strong> A liquid boiling or evaporating soaks up its latent heat: about <strong>2,413&nbsp;kJ/kg</strong> for water at 37&nbsp;°C and <strong>2,256&nbsp;kJ/kg</strong> at 100&nbsp;°C (<a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST WebBook</a>).</li><li><strong>Vapour compression.</strong> Evaporate a refrigerant inside the fridge, compress the vapour outside so it condenses and dumps the heat into the room, and repeat. Jacob Perkins patented this cycle on 14 August 1834 (<a class="cite" href="https://www.asme.org/getmedia/cb9bea09-6d23-425e-bfe5-5f6d786919fb/274-perkins-vapor-comp-refrig.pdf">ASME</a>).</li><li><strong>Expansion and lasers.</strong> Gases cool as they expand through a valve or turbine; that is how hydrogen and helium were first liquefied. Lasers and magnetic traps take atoms the rest of the way to nanokelvin and below.</li></ul>
+      </div>
+    </article>
+<article class="ctl-chapter" id="ch-2" aria-labelledby="ch-2-h">
+      <header><span class="chno">02</span><h3 id="ch-2-h">A worked fridge</h3></header>
+      <p class="hook">Physics caps how much heat each joule of work can move.</p>
+      <div class="body">
+<div class="ctl-worked"><span class="lbl">Worked: the best any fridge could do</span><p>The ideal (Carnot) coefficient of performance is <code>COP = T_cold ÷ (T_hot − T_cold)</code>, in kelvin.</p><p>Fridge at 4&nbsp;°C (277&nbsp;K) in a 35&nbsp;°C kitchen (308&nbsp;K): <code>277 ÷ 31 ≈ 8.9</code>. At best, each joule of electricity moves about 9 joules of heat out.</p><p>Now cool to 1.9&nbsp;K, the LHC’s magnets, rejecting heat at about 300&nbsp;K: <code>1.9 ÷ 298 ≈ 0.0064</code>. Even a perfect machine needs about 160 joules of work per joule removed.</p></div><p>That steep fall explains why CERN’s cryogenics needs <strong>40&nbsp;MW</strong> of electricity and <strong>120&nbsp;tonnes</strong> of helium to hold the magnets at 1.9&nbsp;K (<a class="cite" href="https://home.cern/science/engineering/cryogenics-low-temperatures-high-performance">CERN</a>).</p>
+      </div>
+    </article>
+<article class="ctl-chapter" id="ch-3" aria-labelledby="ch-3-h">
+      <header><span class="chno">03</span><h3 id="ch-3-h">The climb</h3></header>
+      <p class="hook">Each rung down is a new technology, and an exponentially bigger bill.</p>
+      <div class="body">
+<div class="table-scroll" role="region" aria-label="Cooling, from the kitchen to the frontier" tabindex="0"><table class="ctl-data"><caption>Cooling, from the kitchen to the frontier</caption><thead><tr><th scope="col">Rung</th><th scope="col">Temperature</th><th scope="col">What it shows</th><th scope="col">Source</th></tr></thead><tbody><tr><td>Body core</td><td class="num">about 37 °C</td><td>Below 35 °C is hypothermia</td><td><a class="cite" href="https://www.nhs.uk/conditions/hypothermia/">NHS</a></td></tr><tr><td>Carrier’s air-conditioning design, 17 Jul 1902</td><td class="num">(humidity control)</td><td>Cooling and drying air for a print works</td><td><a class="cite" href="https://www.williscarrier.com/weathermakers/1876-1902/">Willis Carrier</a></td></tr><tr><td>Coldest air recorded on Earth, 21 Jul 1983</td><td class="num">−89.2 °C</td><td>Nature’s surface minimum</td><td><a class="cite" href="https://wmo.int/sites/default/files/2025-07/Table_Records_25Jul2025.pdf">WMO</a></td></tr><tr><td>Liquid nitrogen boils</td><td class="num">77.35 K (−195.8 °C)</td><td>Industry’s everyday cold</td><td><a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST</a></td></tr><tr><td>ISS external cooling loops</td><td class="num">35 kW per loop, 70 kW total</td><td>Ammonia carries heat to radiators</td><td><a class="cite" href="https://www.nasa.gov/wp-content/uploads/2021/02/473486main_iss_atcs_overview.pdf">NASA</a></td></tr><tr><td>Liquid hydrogen boils; Dewar first liquefied it in 1898</td><td class="num">20.37 K (−252.8 °C)</td><td>Rocket fuel for cryogenic stages</td><td><a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST</a>; <a class="cite" href="https://royalsocietypublishing.org/doi/10.1098/rspl.1898.0031">Royal Society</a></td></tr><tr><td>ISRO GSLV-D5, 5 Jan 2014</td><td class="num">(liquid hydrogen and oxygen)</td><td>India’s own cryogenic upper stage flies</td><td><a class="cite" href="https://www.isro.gov.in/mission_GSLV_D5GSAT_14.html">ISRO</a></td></tr><tr><td>Webb’s MIRI detectors</td><td class="num">below 7 K (others at 37 K)</td><td>A cryocooler in deep space</td><td><a class="cite" href="https://science.nasa.gov/mission/webb/cryocooler/">NASA</a></td></tr><tr><td>Helium boils; first liquefied 10 Jul 1908</td><td class="num">4.22 K</td><td>Opened the door to superconductivity (1911)</td><td><a class="cite" href="https://webbook.nist.gov/chemistry/fluid/">NIST</a>; <a class="cite" href="https://www.universiteitleiden.nl/en/news/2019/07/liquid-heliums-birthday">Leiden</a>; <a class="cite" href="https://physicstoday.aip.org/features/the-discovery-of-superconductivity">Physics Today</a></td></tr><tr><td>LHC magnets, CERN</td><td class="num">1.9 K</td><td>Colder than space (2.7 K); 36,000 t of cold mass</td><td><a class="cite" href="https://home.cern/science/engineering/cryogenics-low-temperatures-high-performance">CERN</a></td></tr><tr><td>First Bose–Einstein condensate, JILA, 5 Jun 1995</td><td class="num">(nanokelvin regime)</td><td>Atoms act as one quantum wave</td><td><a class="cite" href="https://www.colorado.edu/jila/2025/07/08/thirty-years-bose-einstein-condensates">JILA</a></td></tr><tr><td>Hannover/Bremen team, PRL, 30 Aug 2021</td><td class="num">38 pK</td><td>Coldest ever made</td><td><a class="cite" href="https://doi.org/10.1103/PhysRevLett.127.100401">Deppner et al.</a></td></tr></tbody></table></div>
+      </div>
+    </article>
+<article class="ctl-chapter" id="ch-4" aria-labelledby="ch-4-h">
+      <header><span class="chno">04</span><h3 id="ch-4-h">The record, and how far it goes</h3></header>
+      <p class="hook">Thirty-eight trillionths of a degree, reached by dropping atoms down a tower.</p>
+      <div class="body">
+<p><strong>Record:</strong> a German team (Hannover, Bremen’s ZARM drop-tower institute, Mainz, Berlin) lowered the internal kinetic energy of a Bose–Einstein condensate of about 101,000 atoms to the equivalent of <strong>38 picokelvin</strong> (+6/−7&nbsp;pK), published in <em>Physical Review Letters</em> on 30 August 2021 (<a class="cite" href="https://doi.org/10.1103/PhysRevLett.127.100401">Deppner et al., PRL 127, 100401</a>). They did it by combining a magnetic “lens” with an oscillation of the condensate itself, so the cloud barely spreads; the method is built for long free-fall experiments.</p><div class="ctl-worked"><span class="lbl">Worked: distance from normal</span><p><code>288 K ÷ 38 × 10⁻¹² K ≈ 7.6 × 10¹²</code>. The record is about <strong>7.6 trillion times colder</strong> than Earth’s normal surface, from absolute zero. Nature’s coldest surface reading, Vostok’s 184&nbsp;K, is 0.64 times normal.</p></div><div class="ctl-callout plain"><h4>What this record does and doesn’t mean</h4><p>The 38&nbsp;pK figure describes the spread of atom velocities along certain directions, an effective kinetic temperature, not a whole object sitting in a fridge. It is stated as “3/2&nbsp;k<sub>B</sub>·38&nbsp;pK” of kinetic energy in three dimensions.</p></div>
+      </div>
+    </article>
+<article class="ctl-chapter" id="ch-5" aria-labelledby="ch-5-h">
+      <header><span class="chno">05</span><h3 id="ch-5-h">Try it: feel evaporation</h3></header>
+      <p class="hook">Build the instrument that measures wet-bulb temperature.</p>
+      <div class="body">
+<div class="obs"><p><strong>You need:</strong> two kitchen or aquarium thermometers, a scrap of cotton cloth, water, and a fan or a breezy window.</p><ol><li>Wrap one thermometer bulb in damp cloth. Leave the other bare.</li><li>Put both in the breeze for five minutes and read them.</li><li>The difference is evaporative cooling at work. The wet reading is the <em>wet-bulb</em> temperature.</li><li>Repeat on a humid day and a dry day. When is the gap smallest? What does that mean for sweating?</li></ol></div>
+      </div>
+    </article>
+<article class="ctl-chapter" id="ch-6" aria-labelledby="ch-6-h">
+      <header><span class="chno">06</span><h3 id="ch-6-h">Limits: what stops us</h3></header>
+      <p class="hook">You can approach zero kelvin but never reach it.</p>
+      <div class="body">
+<ul><li><strong>Absolute zero is a floor, not a target.</strong> The kelvin scale starts there (<a class="cite" href="https://www.bipm.org/en/si-base-units/kelvin">BIPM</a>); every halving of temperature costs more work than the last (see the Carnot sum).</li><li><strong>Heat leaks in.</strong> Cryogenic tanks and magnets need vacuum jackets and multilayer insulation; see <a href="contain.html">Contain</a>.</li><li><strong>The body’s limit is humid heat.</strong> Sweat stops working near a wet-bulb temperature of 35&nbsp;°C in theory (<a class="cite" href="https://www.pnas.org/doi/full/10.1073/pnas.0913352107">Sherwood &amp; Huber</a>) and around 31&nbsp;°C in young adults tested in humid heat (<a class="cite" href="https://journals.physiology.org/doi/full/10.1152/japplphysiol.00738.2021">Vecellio et al.</a>).</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="block alt" aria-labelledby="review-h">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">02 · Distance from normal</span><h2 id="dist-h">How far the records go from normal</h2></div>
+    <div class="ctl-distance"><h3>Cool: about 7.6 trillion times colder than normal</h3><p>Normal is <a href="normal-on-earth.html">288&nbsp;K</a>. Nature’s coldest surface air reached 0.64 times that. The LHC holds 36,000 tonnes of magnet mass at 1.9&nbsp;K, about <strong>150 times colder</strong> than normal (worked: 288 ÷ 1.9). The coldest atoms made, 38&nbsp;pK in 2021, are about <strong>7.6 × 10¹² times</strong> colder.</p></div>
+    <div class="section-head"><span class="eyebrow">03 · Review</span><h2 id="review-h">Check your reasoning</h2><p>Answer each one in your notebook before you open it.</p></div>
+    <details class="ctl-check"><summary>Why does a fridge’s back feel warm?</summary><p>It is dumping the heat it pulled from inside, plus the electrical work that drove the compressor, into the room.</p></details><details class="ctl-check"><summary>Why does cooling to 1.9 K need so much more power than cooling to 4 °C?</summary><p>The Carnot COP falls with T_cold ÷ (T_hot − T_cold). At 277 K it is about 8.9; at 1.9 K it is about 0.006, so each joule removed costs over 1,000 times more work.</p></details><details class="ctl-check"><summary>A matka works well in Jaipur in May, poorly in Mumbai in July. Why?</summary><p>Dry air lets water evaporate fast through the clay; humid air slows evaporation, so less heat is carried off.</p></details><details class="ctl-check"><summary>Why do rockets use liquid hydrogen if it must be kept at 20 K?</summary><p>Hydrogen burned with oxygen gives high exhaust speed per kilogram of propellant; the price is cryogenic tanks and insulation.</p></details>
+    <div class="lesson-pager"><a class="btn btn-quiet" href="regulate.html">← Regulate (general verb)</a><a class="btn btn-quiet" href="heat.html">← Heat</a><a class="btn btn-quiet" href="boil.html">Boil →</a></div>
+  </div>
+</section>
+<section class="block ctl-sources" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">04 · Sources</span><h2 id="src-h">Where the facts come from</h2><p>Each number on this page links to one of these. Values are rounded. Anything we could not check is marked <span class="ctl-tbc">TBC</span>. Sums marked “worked” are our own arithmetic from the cited values.</p></div>
+    <ol><li>NIST Chemistry WebBook, Thermophysical Properties of Fluid Systems (water: IAPWS-95). <a href="https://webbook.nist.gov/chemistry/fluid/">https://webbook.nist.gov/chemistry/fluid/</a></li><li>ASME, “Perkins Vapor-Compression Refrigeration” landmark brochure (PDF). <a href="https://www.asme.org/getmedia/cb9bea09-6d23-425e-bfe5-5f6d786919fb/274-perkins-vapor-comp-refrig.pdf">https://www.asme.org/getmedia/cb9bea09-6d23-425e-bfe5-5f6d786919fb/274-perkins-vapor-comp-refrig.pdf</a></li><li>Willis Carrier, “Weathermakers to the World: 1876–1902”. <a href="https://www.williscarrier.com/weathermakers/1876-1902/">https://www.williscarrier.com/weathermakers/1876-1902/</a></li><li>CERN, “Cryogenics: Low temperatures, high performance”. <a href="https://home.cern/science/engineering/cryogenics-low-temperatures-high-performance">https://home.cern/science/engineering/cryogenics-low-temperatures-high-performance</a></li><li>NASA, “Active Thermal Control System (ATCS) Overview” (PDF). <a href="https://www.nasa.gov/wp-content/uploads/2021/02/473486main_iss_atcs_overview.pdf">https://www.nasa.gov/wp-content/uploads/2021/02/473486main_iss_atcs_overview.pdf</a></li><li>J. Dewar, “Preliminary note on the liquefaction of hydrogen and helium”, Proc. R. Soc. (1898). <a href="https://royalsocietypublishing.org/doi/10.1098/rspl.1898.0031">https://royalsocietypublishing.org/doi/10.1098/rspl.1898.0031</a></li><li>ISRO, “GSLV-D5 / GSAT-14” (5 Jan 2014, indigenous cryogenic upper stage). <a href="https://www.isro.gov.in/mission_GSLV_D5GSAT_14.html">https://www.isro.gov.in/mission_GSLV_D5GSAT_14.html</a></li><li>NASA Science, “Webb: Cryocooler”. <a href="https://science.nasa.gov/mission/webb/cryocooler/">https://science.nasa.gov/mission/webb/cryocooler/</a></li><li>Leiden University, “Liquid helium’s birthday” (10 July 1908). <a href="https://www.universiteitleiden.nl/en/news/2019/07/liquid-heliums-birthday">https://www.universiteitleiden.nl/en/news/2019/07/liquid-heliums-birthday</a></li><li>Physics Today, “The discovery of superconductivity”. <a href="https://physicstoday.aip.org/features/the-discovery-of-superconductivity">https://physicstoday.aip.org/features/the-discovery-of-superconductivity</a></li><li>JILA, University of Colorado, “Thirty years of Bose–Einstein condensates”. <a href="https://www.colorado.edu/jila/2025/07/08/thirty-years-bose-einstein-condensates">https://www.colorado.edu/jila/2025/07/08/thirty-years-bose-einstein-condensates</a></li><li>C. Deppner et al., “Collective-Mode Enhanced Matter-Wave Optics”, Phys. Rev. Lett. 127, 100401 (2021). <a href="https://doi.org/10.1103/PhysRevLett.127.100401">https://doi.org/10.1103/PhysRevLett.127.100401</a> Atom number (101 ± 37 thousand), 38 (+6/−7) pK and the 30 Aug 2021 date read from the APS abstract page. Whether the record run itself was in the drop tower is <span class="ctl-tbc">TBC</span> (full text paywalled).</li><li>WMO World Weather &amp; Climate Extremes Archive, records table (25 Jul 2025, PDF). <a href="https://wmo.int/sites/default/files/2025-07/Table_Records_25Jul2025.pdf">https://wmo.int/sites/default/files/2025-07/Table_Records_25Jul2025.pdf</a></li><li>NHS, “Hypothermia”. <a href="https://www.nhs.uk/conditions/hypothermia/">https://www.nhs.uk/conditions/hypothermia/</a></li><li>S. C. Sherwood and M. Huber, “An adaptability limit to climate change due to heat stress”, PNAS 107 (2010). <a href="https://www.pnas.org/doi/full/10.1073/pnas.0913352107">https://www.pnas.org/doi/full/10.1073/pnas.0913352107</a></li><li>D. J. Vecellio et al., “Evaluating the 35 °C wet-bulb temperature adaptability threshold for young, healthy subjects”, J. Appl. Physiol. 132 (2022). <a href="https://journals.physiology.org/doi/full/10.1152/japplphysiol.00738.2021">https://journals.physiology.org/doi/full/10.1152/japplphysiol.00738.2021</a></li><li>BIPM, “SI base unit: kelvin”. <a href="https://www.bipm.org/en/si-base-units/kelvin">https://www.bipm.org/en/si-base-units/kelvin</a></li><li>Department of Consumer Affairs, Price Monitoring Division, daily retail and wholesale prices (30 Oct 2026). <a href="https://fcainfoweb.nic.in/">https://fcainfoweb.nic.in/</a></li><li>R. Singh, S. P. Singh and I. J. Lazarus, “Impact of building and refrigeration system’s parameters on energy consumption in the potato cold storage”, Energy and Environment Research 4(3) (2014). <a href="https://openscholar.dut.ac.za/server/api/core/bitstreams/01cfcfdc-144f-4607-bab7-636dbb1bfc28/content">https://openscholar.dut.ac.za/server/api/core/bitstreams/01cfcfdc-144f-4607-bab7-636dbb1bfc28/content</a></li><li>Amar Ujala, Agra potato prices at Holi (1 Mar 2026, Hindi). <a href="https://www.amarujala.com/uttar-pradesh/agra/market-slowdown-and-smallpox-hit-potato-farmers-face-a-loss-on-holi-agra-news-c-421-1-sagr1004-2703-2026-03-01">https://www.amarujala.com/uttar-pradesh/agra/market-slowdown-and-smallpox-hit-potato-farmers-face-a-loss-on-holi-agra-news-c-421-1-sagr1004-2703-2026-03-01</a></li><li>The Hindu, “Potato farming in Uttar Pradesh has entered a structural crisis” (2026). <a href="https://www.thehindu.com/news/national/uttar-pradesh/potato-farming-in-uttar-pradesh-has-entered-a-structural-crisis-says-samajwadi-party/article70776533.ece">https://www.thehindu.com/news/national/uttar-pradesh/potato-farming-in-uttar-pradesh-has-entered-a-structural-crisis-says-samajwadi-party/article70776533.ece</a></li><li>PIB (MoFPI), NABCONS study on post-harvest losses (onion 7.27%, potato 5.96%, tomato 11.62%). <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2151371">https://www.pib.gov.in/PressReleasePage.aspx?PRID=2151371</a></li><li>PIB (NPPA), ceiling price of liquid medical oxygen, ₹15.22 per m³ (Sep 2020). <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=1659266">https://www.pib.gov.in/PressReleasePage.aspx?PRID=1659266</a></li><li>SAMEEEKSHA / BEE, “Bhimavaram ice-making cluster profile”. <a href="https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf">https://sameeeksha.org/pdf/clusterprofile/Bhimavaram_Ice_Making.pdf</a></li><li>Archives of Thermodynamics (PAN), air-separation unit specific energy. <a href="https://journals.pan.pl/Content/94731/PDF/11_paper.pdf?handler=pdf">https://journals.pan.pl/Content/94731/PDF/11_paper.pdf?handler=pdf</a></li></ol>
+    <p class="attrib"><strong>Attribution.</strong> Socratic structure (question, observations, deductions, refined model) adapted from John S. Hutchinson, <em>Concept Development Studies in Chemistry</em> (Connexions / Rice University), licensed under <a href="https://creativecommons.org/licenses/by/2.0/" rel="license">Creative Commons Attribution 2.0 (CC BY 2.0)</a>. Page format follows the chapter pages of <a href="https://kinetic.curiosta.com/">kinetic.curiosta.com</a>. The topic, examples and text are original to learn.curiosta.com.</p>
+  </div>
+</section>
+</main>
+
+<!-- giscus:start · learn.curiosta.com comments (GitHub Discussions, category Comments); emitted by the site build, do not hand-edit -->
+<section id="comments" class="block comments" aria-labelledby="comments-h">
+  <div class="wrap">
+    <div class="section-head comments-head">
+      <span class="eyebrow">Discuss</span>
+      <h2 id="comments-h">Discuss this page</h2>
+      <p>Questions, corrections or a better example? Comments run on GitHub Discussions, so you need a GitHub account to post.</p>
+    </div>
+    <div class="comments-embed">
+<script src="https://giscus.app/client.js"
+        data-repo="curiosta/learn"
+        data-repo-id="R_kgDOU9CUMQ"
+        data-category="Comments"
+        data-category-id="DIC_kwDOU9CUMc4DHj4g"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async></script>
+    </div>
+  </div>
+</section>
+<!-- giscus:end -->
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      Part of the <a href="https://www.curiosta.com/">Curiosta</a> family
+      <p class="siblings">
+        Siblings:
+        <a href="https://kinetic.curiosta.com/">kinetic.curiosta.com</a> ·
+        <a href="https://equity.curiosta.com/">equity.curiosta.com</a>
+      </p>
+      <span class="draft">learn.curiosta.com · a Curiosta brand</span>
+    </div>
+    <nav aria-label="Footer">
+      <a href="../index.html">Home</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../curriculum.html#how-we-teach">How we teach</a>
+      <a href="../lessons/index.html">Lessons</a>
+      <a href="../ideas.html">Ideas</a>
+      <a href="../control-map.html">Control map</a>
+      <a href="normal-on-earth.html">Normal on Earth</a>
+      <a href="glossary.html">Business glossary</a>
+      <a href="../on-this-day.html">On this day</a>
+      <a href="../resources.html">Skills &amp; resources</a>
+      <a href="https://www.curiosta.com/">Curiosta</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
